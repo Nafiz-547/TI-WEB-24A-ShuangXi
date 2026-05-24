@@ -4,7 +4,6 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  // Baris url = env("DATABASE_URL") DIHAPUS
 }
 
 model Destination {
