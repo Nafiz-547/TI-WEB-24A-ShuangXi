@@ -15,5 +15,6 @@ model Destination {
   image       String
   price       String
   createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  // diubah agar database punya nilai cadangan saat di-insert lewat Prisma Studio
+  updatedAt   DateTime @default(now()) @updatedAt
 }

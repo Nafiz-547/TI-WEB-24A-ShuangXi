@@ -7,16 +7,17 @@ export const destinations = [
     description: "Ikon kebanggaan Lampung yang menjadi titik nol Sumatera.",
     image: "/images/siger.webp", // Pastikan file ada di public/images/
     price: "Gratis",
-    day: 1
+    day: 1,
   },
   {
     id: "2",
-    name: "Pulau Pahawang",
-    location: "Pesawaran",
-    description: "Surga snorkeling dengan keindahan terumbu karang yang mempesona.",
-    image: "/images/pahawang.webp",
-    price: "Rp 150.000",
-    day: 4
+    name: "Pantai Gigi Hiu",
+    day: 3,
+    location: "Tanggamus, Lampung",
+    description:
+      "Pantai dengan formasi batuan karang yang tajam dan menjulang tinggi bak gigi hiu.",
+    image: "/images/gigi-hiu.webp",
+    price: "Rp 15.000",
   },
   // Tambahkan destinasi lainnya...
 ];
