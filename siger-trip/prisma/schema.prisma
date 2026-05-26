@@ -1,13 +1,36 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Get a free hosted Postgres database in seconds: `npx create-db`
-
 generator client {
-  provider = "prisma-client"
-  output   = "../generated/prisma"
+  provider = "prisma-client-js"
 }
 
 datasource db {
   provider = "postgresql"
+}
+
+// MODEL BARU: Untuk menyimpan data Paket Wisata
+model Package {
+  id           String        @id @default(cuid())
+  title        String        // Contoh: "7 Hari Jelajah Wisata Kuliner"
+  duration     Int           // Contoh: 3 (Durasi hari)
+  category     String        // Contoh: "Kuliner", "Alam", "Budaya"
+  description  String        @db.Text
+  basePrice    String        // Contoh: "Rp 750.000"
+  image        String        // Banner utama paket
+  destinations Destination[] // Relasi: 1 Paket memiliki banyak tempat wisata
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @default(now()) @updatedAt
+}
+
+// MODEL MODIFIKASI: Ditambahkan penghubung ke Package
+model Destination {
+  id          String   @id @default(cuid())
+  packageId   String   // ID penghubung ke tabel Package (Foreign Key)
+  package     Package  @relation(fields: [packageId], references: [id], onDelete: Cascade)
+  name        String
+  day         Int      // Hari ke-berapa dalam paket tersebut (Hari 1, Hari 2, dst)
+  location    String
+  description String   @db.Text
+  image       String
+  price       String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @default(now()) @updatedAt
 }
