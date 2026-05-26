@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/navbar"; // <-- 1. Import komponen Navbar yang baru
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,29 +24,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="id"> {/* Mengubah lang ke "id" karena website berbahasa Indonesia */}
       <body
-      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-50`}
       >
-        <header>
-            <Image
-              src="/images/SIGERTRIP.png"
-              alt="Logo SigerTrip"
-              width={130}
-              height={40}
-              className="object-contain"
-            />
-        </header>
         
-        {/* panggil fungsi komponennavbar (menu) */}
-        <menu />
+        {/* 2. Panggil komponen Navbar di sini (Menggantikan header lama & tag <menu />) */}
+        <Navbar />
 
+        {/* Konten Utama Halaman */}
         <main className="content">
           {children}
         </main>
-        <footer>
-          Copyright &copy; 2026 -  SigerTrip. All rights reserved.
+        
+        {/* Footer */}
+        <footer className="bg-white border-t py-6 text-center text-sm text-gray-500">
+          Copyright &copy; 2026 - SigerTrip. All rights reserved.
         </footer>
+
       </body>
     </html>
   );
