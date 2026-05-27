@@ -6,59 +6,33 @@ datasource db {
   provider = "postgresql"
 }
 
+
 // 1. MODEL UTAMA: Paket Wisata SigerTrip
 model Package {
   id           String        @id @default(cuid())
   title        String        // Contoh: "3 Hari Keliling Kuliner di Bandar Lampung"
-  duration     Int           // Contoh: 3 (Durasi dalam hari)
-  category     String        // Contoh: "Kuliner", "Alam", "Petualangan"
+  duration     Int           // Contoh: 3
+  category     String        // Contoh: "Kuliner", "Alam", "Perkotaan"
   description  String        @db.Text
-  basePrice    String        // Contoh: "Rp 450.000"
+  basePrice    String        // Contoh: "Rp 350.000"
   image        String        // Banner utama paket
-  destinations Destination[] // Relasi: 1 Paket punya banyak destinasi wisata
-  restaurants  Restaurant[]  // Relasi: 1 Paket punya banyak rekomendasi tempat makan
-  lodgings     Lodging[]     // Relasi: 1 Paket punya banyak rekomendasi penginapan
+  destinations Destination[] // Relasi: 1 Paket memiliki banyak titik pemberhentian/itinerary
   createdAt    DateTime      @default(now())
   updatedAt    DateTime      @default(now()) @updatedAt
 }
 
-// 2. MODEL ANAK: Daftar Tempat Wisata per Hari
+// 2. MODEL TIMELINE: Titik Pemberhentian Aktivitas Harian
 model Destination {
   id          String   @id @default(cuid())
   packageId   String   // Foreign Key penghubung ke Package
   package     Package  @relation(fields: [packageId], references: [id], onDelete: Cascade)
-  name        String
-  day         Int      // Hari ke-berapa tempat ini dikunjungi (Day 1, Day 2, dst)
-  location    String
+  name        String   // Nama Tempat (Bisa pantai, restoran, atau hotel)
+  category    String   // PENTING: Diisi "Wisata", "Kuliner", atau "Penginapan"
+  day         Int      // Hari ke-berapa aktivitas ini dilakukan (1, 2, 3, dst)
+  location    String   // Alamat titik lokasi
   description String   @db.Text
-  image       String
-  price       String   // Harga tiket masuk tempat wisata
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @default(now()) @updatedAt
-}
-
-// 3. MODEL BARU: Rekomendasi Tempat Makan Kuliner
-model Restaurant {
-  id          String   @id @default(cuid())
-  packageId   String   // Foreign Key penghubung ke Package
-  package     Package  @relation(fields: [packageId], references: [id], onDelete: Cascade)
-  name        String   // Contoh: "Bakso Sony"
-  menuStub    String   // Menu andalan, contoh: "Bakso Sapi & Pempek"
-  location    String   // Contoh: "Jl. Wolter Monginsidi, Bandar Lampung"
-  image       String   // Foto tempat makan / makanan
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @default(now()) @updatedAt
-}
-
-// 4. MODEL BARU: Rekomendasi Penginapan / Hotel
-model Lodging {
-  id          String   @id @default(cuid())
-  packageId   String   // Foreign Key penghubung ke Package
-  package     Package  @relation(fields: [packageId], references: [id], onDelete: Cascade)
-  name        String   // Contoh: "Novotel Lampung"
-  type        String   // Contoh: "Hotel Bintang 4", "Homestay", "Glamping"
-  location    String   // Contoh: "Bumi Waras, Bandar Lampung"
-  priceRange  String   // Contoh: "Rp 800.000 - Rp 1.500.000 / malam"
+  image       String   // Foto lokasi
+  price       String   // Estimasi biaya (Tiket masuk / Harga makan / Tarif hotel)
   createdAt   DateTime @default(now())
   updatedAt   DateTime @default(now()) @updatedAt
 }
