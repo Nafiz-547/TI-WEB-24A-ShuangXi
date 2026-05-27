@@ -18,13 +18,12 @@ export default async function PackageTimelinePage({
   
   const selectedDay = day ? parseInt(day) : 1; 
 
-  // Tarik data paket beserta titik pemberhentian di hari yang dipilih
   const travelPackage = await prisma.package.findUnique({
     where: { id },
     include: {
       destinations: {
         where: { day: selectedDay },
-        orderBy: { createdAt: 'asc' } // Mengikuti urutan kronologis input admin
+        orderBy: { createdAt: 'asc' }
       }
     }
   });
@@ -33,14 +32,13 @@ export default async function PackageTimelinePage({
 
   const totalDays = Array.from({ length: travelPackage.duration }, (_, i) => i + 1);
 
-  // Fungsi pembantu untuk menentukan gaya badge berdasarkan kategori (Opsi B)
   const getCategoryStyles = (category: string) => {
     switch (category) {
       case "Kuliner":
         return { bg: "bg-orange-50 text-orange-600 border-orange-200", icon: "🍱" };
       case "Penginapan":
         return { bg: "bg-purple-50 text-purple-600 border-purple-200", icon: "🏨" };
-      default: // Wisata
+      default: 
         return { bg: "bg-blue-50 text-blue-600 border-blue-200", icon: "🏝️" };
     }
   };
@@ -67,8 +65,22 @@ export default async function PackageTimelinePage({
         </div>
       </div>
 
-      {/* KONTEN UTAMA */}
+      {/* MAIN CONTENT LAYOUT */}
       <div className="max-w-6xl mx-auto px-4 md:px-8 mt-6">
+        
+        {/* 💡 TOMBOL KEMBALI KE KATALOG (UX ADDITION) */}
+        <div className="mb-5">
+          <Link
+            href="/destinasi"
+            className="inline-flex items-center gap-2 text-xs font-bold text-slate-500 hover:text-[#f78232] transition-colors group"
+          >
+            <span className="inline-block transform group-hover:-translate-x-1 transition-transform duration-200 font-mono text-sm">
+              ←
+            </span>
+            Kembali ke Katalog Destinasi
+          </Link>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
           
           {/* SIDEBAR NAVIGATION HARI */}
@@ -116,21 +128,17 @@ export default async function PackageTimelinePage({
                 Belum ada agenda rute titik kunjungan untuk hari ini.
               </div>
             ) : (
-              // GARIS VERTIKAL TIMELINE (CORE LAYOUT OPSIB)
               <div className="relative border-l-2 border-slate-100 ml-3 space-y-8 pb-4">
                 {travelPackage.destinations.map((dest, index) => {
                   const styles = getCategoryStyles(dest.category);
                   return (
                     <div key={dest.id} className="relative pl-6 md:pl-8 group">
                       
-                      {/* TITIK INDIKATOR TIMELINE */}
                       <span className="absolute -left-[11px] top-1.5 bg-white border-2 border-[#f78232] text-[#f78232] w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-black group-hover:bg-[#f78232] group-hover:text-white transition-colors duration-200">
                         {index + 1}
                       </span>
 
-                      {/* KARTU AKTIVITAS */}
                       <div className="bg-slate-50 rounded-2xl p-5 border border-slate-100 flex flex-col md:flex-row gap-5 hover:bg-white hover:shadow-md hover:border-slate-200/60 transition-all duration-200">
-                        {/* Gambar Pendukung */}
                         <div className="relative h-32 md:w-1/3 min-h-[120px] rounded-xl overflow-hidden flex-shrink-0">
                           <Image
                             src={dest.image ? dest.image.replace('public', '').replace(/\\/g, '/') : "/images/placeholder.jpg"}
@@ -140,7 +148,6 @@ export default async function PackageTimelinePage({
                           />
                         </div>
 
-                        {/* Konten Detail */}
                         <div className="md:w-2/3 flex flex-col justify-between">
                           <div>
                             <div className="flex items-center gap-2 mb-1.5">
