@@ -1,8 +1,5 @@
 import { loadEnvConfig } from '@next/env';
-// 1. Panggil variabel environment (.env)
 loadEnvConfig(process.cwd());
-
-// 2. KUNCI RAHASIA: Import instansiasi prisma yang SUDAH JALAN di Next.js kamu
 import { prisma } from '../lib/prisma';
 
 async function main() {

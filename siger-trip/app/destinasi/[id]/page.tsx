@@ -68,7 +68,7 @@ export default async function PackageTimelinePage({
       {/* MAIN CONTENT LAYOUT */}
       <div className="max-w-6xl mx-auto px-4 md:px-8 mt-6">
         
-        {/* 💡 TOMBOL KEMBALI KE KATALOG (UX ADDITION) */}
+        {/* TOMBOL KEMBALI KE KATALOG */}
         <div className="mb-5">
           <Link
             href="/destinasi"
