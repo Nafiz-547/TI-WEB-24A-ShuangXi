@@ -48,7 +48,7 @@ export default async function PackageTimelinePage({
       {/* HERO BANNER */}
       <div className="relative h-[35vh] md:h-[40vh] w-full bg-slate-900">
         <Image
-          src={travelPackage.image || "/images/placeholder.jpg"}
+          src={travelPackage.image || "/images/siger.webp"}
           alt={travelPackage.title}
           fill
           className="object-cover opacity-60"

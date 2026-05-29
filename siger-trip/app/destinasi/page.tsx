@@ -34,7 +34,7 @@ export default async function CatalogPage() {
                 src={
                   pkg.image
                     ? pkg.image.replace('public', '').replace(/\\/g, '/')
-                    : "/images/placeholder.jpg"
+                    : "/images/siger."
                 } 
                 alt={pkg.title}
                 fill
