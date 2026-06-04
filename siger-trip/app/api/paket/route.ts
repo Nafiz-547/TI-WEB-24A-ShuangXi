@@ -51,3 +51,33 @@ export async function DELETE(req: Request) {
     return NextResponse.json({ error: "Gagal menghapus paket wisata." }, { status: 500 });
   }
 }
+
+// Tambahkan method PUT di dalam file app/api/paket/route.ts yang sama
+export async function PUT(req: Request) {
+  try {
+    const body = await req.json();
+    const { id, title, duration, category, description, basePrice, image } = body;
+
+    if (!id || !title || !duration || !category || !basePrice) {
+      return NextResponse.json({ error: "Kolom wajib diisi!" }, { status: 400 });
+    }
+
+    // Perbarui data paket di PostgreSQL berdasarkan ID
+    const updatedPackage = await prisma.package.update({
+      where: { id },
+      data: {
+        title,
+        duration: parseInt(duration),
+        category,
+        description,
+        basePrice,
+        image, // Update dengan path gambar baru (jika ada)
+      },
+    });
+
+    return NextResponse.json({ success: true, data: updatedPackage });
+  } catch (error) {
+    console.error("Kesalahan API Update Paket:", error);
+    return NextResponse.json({ error: "Gagal memperbarui data paket wisata." }, { status: 500 });
+  }
+}
