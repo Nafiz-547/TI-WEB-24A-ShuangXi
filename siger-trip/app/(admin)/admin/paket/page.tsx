@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
 import Image from "next/image";
+import DeleteButton from "./DeleteButton";
 
 export default async function AdminPaketPage() {
   // Tarik semua data paket dari database, urutkan dari yang terbaru
@@ -10,12 +11,15 @@ export default async function AdminPaketPage() {
 
   return (
     <div className="space-y-6">
-      
       {/* HEADER & TOMBOL TAMBAH */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-black tracking-tight text-slate-900">Kelola Paket Wisata</h1>
-          <p className="text-xs text-slate-500 mt-1">Daftar seluruh paket tur SigerTrip yang aktif dan ditayangkan.</p>
+          <h1 className="text-2xl font-black tracking-tight text-slate-900">
+            Kelola Paket Wisata
+          </h1>
+          <p className="text-xs text-slate-500 mt-1">
+            Daftar seluruh paket tur SigerTrip yang aktif dan ditayangkan.
+          </p>
         </div>
         <Link
           href="/admin/paket/tambah"
@@ -29,7 +33,8 @@ export default async function AdminPaketPage() {
       <div className="bg-white rounded-2xl shadow-sm border border-slate-200/60 overflow-hidden">
         {packages.length === 0 ? (
           <div className="text-center py-16 text-slate-400 text-xs">
-            Belum ada paket wisata di database. Klik "Tambah Paket Baru" untuk memulai.
+            Belum ada paket wisata di database. Klik "Tambah Paket Baru" untuk
+            memulai.
           </div>
         ) : (
           <div className="overflow-x-auto">
@@ -46,7 +51,10 @@ export default async function AdminPaketPage() {
               </thead>
               <tbody className="divide-y divide-slate-100 text-xs font-medium text-slate-700">
                 {packages.map((pkg) => (
-                  <tr key={pkg.id} className="hover:bg-slate-50/80 transition-colors">
+                  <tr
+                    key={pkg.id}
+                    className="hover:bg-slate-50/80 transition-colors"
+                  >
                     {/* Kolom Gambar */}
                     <td className="py-4 px-6">
                       <div className="relative h-12 w-16 rounded-lg overflow-hidden bg-slate-100 border border-slate-200">
@@ -60,8 +68,12 @@ export default async function AdminPaketPage() {
                     </td>
                     {/* Kolom Judul */}
                     <td className="py-4 px-6">
-                      <span className="font-bold text-slate-900 block">{pkg.title}</span>
-                      <span className="text-[10px] text-slate-400 block mt-0.5 max-w-xs truncate">{pkg.description}</span>
+                      <span className="font-bold text-slate-900 block">
+                        {pkg.title}
+                      </span>
+                      <span className="text-[10px] text-slate-400 block mt-0.5 max-w-xs truncate">
+                        {pkg.description}
+                      </span>
                     </td>
                     {/* Kolom Kategori */}
                     <td className="py-4 px-6">
@@ -86,11 +98,10 @@ export default async function AdminPaketPage() {
                         >
                           ✏️ Edit
                         </Link>
-                        <button
-                          className="px-3 py-1.5 rounded-lg border border-slate-200 hover:border-red-500 hover:text-red-600 transition-colors bg-white font-semibold text-[11px]"
-                        >
-                          🗑️ Hapus
-                        </button>
+                        <DeleteButton
+                          packageId={pkg.id}
+                          packageTitle={pkg.title}
+                        />
                       </div>
                     </td>
                   </tr>
@@ -100,7 +111,6 @@ export default async function AdminPaketPage() {
           </div>
         )}
       </div>
-
     </div>
   );
 }

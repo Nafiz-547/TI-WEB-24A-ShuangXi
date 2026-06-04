@@ -29,3 +29,25 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Gagal menyimpan paket wisata baru." }, { status: 500 });
   }
 }
+
+// Tambahkan method DELETE di dalam file app/api/paket/route.ts yang sama
+export async function DELETE(req: Request) {
+  try {
+    const { searchParams } = new URL(req.url);
+    const id = searchParams.get("id");
+
+    if (!id) {
+      return NextResponse.json({ error: "ID Paket tidak ditemukan." }, { status: 400 });
+    }
+
+    // Hapus paket dari PostgreSQL (Otomatis menghapus rute destinasi di dalamnya karena onDelete: Cascade)
+    await prisma.package.delete({
+      where: { id },
+    });
+
+    return NextResponse.json({ success: true, message: "Paket berhasil dihapus." });
+  } catch (error) {
+    console.error("Kesalahan API Delete Paket:", error);
+    return NextResponse.json({ error: "Gagal menghapus paket wisata." }, { status: 500 });
+  }
+}
