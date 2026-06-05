@@ -7,14 +7,12 @@ import Link from "next/link";
 export default function AdminTambahPaketPage() {
   const router = useRouter();
   
-  // State Penampung Form Teks
   const [title, setTitle] = useState("");
   const [duration, setDuration] = useState("3");
   const [category, setCategory] = useState("Kuliner");
   const [description, setDescription] = useState("");
   const [basePrice, setBasePrice] = useState("");
   
-  // State Penampung File & Indikator Loading
   const [file, setFile] = useState<File | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -25,9 +23,8 @@ export default function AdminTambahPaketPage() {
     setError("");
 
     try {
-      let imagePath = "/images/placeholder.jpg"; // Default jika tidak upload gambar
+      let imagePath = "/images/placeholder.jpg";
 
-      // FASE 1: Proses Upload Gambar jika file dipilih
       if (file) {
         const formData = new FormData();
         formData.append("file", file);
@@ -43,10 +40,9 @@ export default function AdminTambahPaketPage() {
           throw new Error(uploadData.error || "Gagal mengunggah gambar.");
         }
 
-        imagePath = uploadData.filePath; // Ambil path unik dari server
+        imagePath = uploadData.filePath;
       }
 
-      // FASE 2: Kirim Seluruh Data ke API Paket
       const packageResponse = await fetch("/api/paket", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -66,12 +62,12 @@ export default function AdminTambahPaketPage() {
         throw new Error(packageData.error || "Gagal menyimpan paket.");
       }
 
-      // Jika sukses, kembalikan admin ke halaman tabel utama dengan data ter-refresh
       router.push("/admin/paket");
       router.refresh();
 
-    } catch (err: any) {
-      setError(err.message || "Terjadi kesalahan sistem.");
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : "Terjadi kesalahan sistem.";
+      setError(msg);
     } finally {
       setLoading(false);
     }
@@ -79,19 +75,15 @@ export default function AdminTambahPaketPage() {
 
   return (
     <div className="max-w-3xl mx-auto space-y-6">
-      
-      {/* NAVIGASI KEMBALI */}
       <div>
         <Link href="/admin/paket" className="text-xs font-bold text-slate-400 hover:text-slate-600 transition-colors">
           ← Kembali ke Daftar Paket
         </Link>
         <h1 className="text-2xl font-black tracking-tight text-slate-900 mt-2">Tambah Paket Wisata Baru</h1>
-        <p className="text-xs text-slate-500 mt-1">Buat katalog paket baru. Seluruh inputan file akan otomatis dienkripsi dan disimpan ke server internal.</p>
+        <p className="text-xs text-slate-500 mt-1">Buat katalog paket baru. Seluruh inputan file akan otomatis disimpan ke server internal.</p>
       </div>
 
-      {/* BOX FORM UTAMA */}
       <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200/60">
-        
         {error && (
           <div className="mb-6 p-4 rounded-xl bg-red-50 border border-red-200 text-xs font-semibold text-red-600">
             ⚠️ {error}
@@ -99,11 +91,10 @@ export default function AdminTambahPaketPage() {
         )}
 
         <form onSubmit={handleSubmit} className="space-y-5">
-          
-          {/* INPUT JUDUL */}
           <div className="flex flex-col gap-1.5">
-            <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Nama Paket Wisata</label>
+            <label htmlFor="title-input" className="text-xs font-bold text-slate-500 uppercase tracking-wider">Nama Paket Wisata</label>
             <input
+              id="title-input"
               type="text"
               required
               placeholder="Contoh: 3 Hari Keliling Kuliner Legendaris"
@@ -114,10 +105,11 @@ export default function AdminTambahPaketPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {/* SELECT KATEGORI */}
             <div className="flex flex-col gap-1.5">
-              <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Kategori Paket</label>
+              <label htmlFor="category-select" className="text-xs font-bold text-slate-500 uppercase tracking-wider">Kategori Paket</label>
               <select
+                id="category-select"
+                title="Pilih Kategori Paket"
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
                 className="w-full px-4 py-3 rounded-xl border border-slate-200 text-xs font-semibold text-slate-700 focus:outline-none focus:border-[#f78232] transition-colors bg-slate-50/50"
@@ -128,13 +120,14 @@ export default function AdminTambahPaketPage() {
               </select>
             </div>
 
-            {/* INPUT DURASI */}
             <div className="flex flex-col gap-1.5">
-              <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Durasi Tur (Hari)</label>
+              <label htmlFor="duration-input" className="text-xs font-bold text-slate-500 uppercase tracking-wider">Durasi Tur (Hari)</label>
               <input
+                id="duration-input"
                 type="number"
                 min="1"
                 required
+                placeholder="Jumlah hari"
                 value={duration}
                 onChange={(e) => setDuration(e.target.value)}
                 className="w-full px-4 py-3 rounded-xl border border-slate-200 text-xs font-medium focus:outline-none focus:border-[#f78232] transition-colors bg-slate-50/50"
@@ -142,10 +135,10 @@ export default function AdminTambahPaketPage() {
             </div>
           </div>
 
-          {/* INPUT HARGA */}
           <div className="flex flex-col gap-1.5">
-            <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Harga Mulai Dari</label>
+            <label htmlFor="price-input" className="text-xs font-bold text-slate-500 uppercase tracking-wider">Harga Mulai Dari</label>
             <input
+              id="price-input"
               type="text"
               required
               placeholder="Contoh: Rp 350.000"
@@ -155,10 +148,10 @@ export default function AdminTambahPaketPage() {
             />
           </div>
 
-          {/* INPUT DESKRIPSI */}
           <div className="flex flex-col gap-1.5">
-            <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Deskripsi Singkat Paket</label>
+            <label htmlFor="desc-textarea" className="text-xs font-bold text-slate-500 uppercase tracking-wider">Deskripsi Singkat Paket</label>
             <textarea
+              id="desc-textarea"
               rows={4}
               required
               placeholder="Jelaskan secara garis besar apa saja yang akan didapatkan wisatawan di paket ini..."
@@ -168,12 +161,13 @@ export default function AdminTambahPaketPage() {
             />
           </div>
 
-          {/* INPUT FILE UPLOAD GAMBAR */}
           <div className="flex flex-col gap-1.5 p-4 rounded-xl border border-dashed border-slate-200 bg-slate-50/40">
-            <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Banner Utama Paket (Gambar)</label>
+            <label htmlFor="file-input" className="text-xs font-bold text-slate-500 uppercase tracking-wider">Banner Utama Paket (Gambar)</label>
             <input
+              id="file-input"
               type="file"
               accept="image/*"
+              title="Unggah Gambar Banner"
               onChange={(e) => {
                 if (e.target.files && e.target.files[0]) {
                   setFile(e.target.files[0]);
@@ -184,26 +178,23 @@ export default function AdminTambahPaketPage() {
             <p className="text-[10px] text-slate-400 mt-1">Format yang didukung: JPG, PNG, WEBP. Maksimal 2MB.</p>
           </div>
 
-          {/* TOMBOL AKSI */}
           <div className="pt-4 flex items-center justify-end gap-3 border-t border-slate-100">
             <Link
               href="/admin/paket"
-              className="px-5 py-3 rounded-xl border border-slate-200 text-xs font-bold text-slate-500 hover:bg-slate-50 transition-colors"
+              className="px-5 py-3 rounded-xl border border-slate-200 text-xs font-bold text-slate-500 hover:bg-slate-50 active:scale-[0.98] transition-all"
             >
               Batal
             </Link>
             <button
               type="submit"
               disabled={loading}
-              className="bg-[#f78232] text-white font-bold text-xs px-6 py-3 rounded-xl hover:bg-orange-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-sm shadow-orange-500/10"
+              className="bg-[#f78232] text-white font-bold text-xs px-6 py-3 rounded-xl hover:bg-orange-600 active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-sm shadow-orange-500/10"
             >
               {loading ? "⌛ Sedang Menyimpan..." : "💾 Simpan Paket Wisata"}
             </button>
           </div>
-
         </form>
       </div>
-
     </div>
   );
 }

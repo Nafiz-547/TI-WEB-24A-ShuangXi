@@ -33,8 +33,8 @@ export default async function AdminPaketPage() {
       <div className="bg-white rounded-2xl shadow-sm border border-slate-200/60 overflow-hidden">
         {packages.length === 0 ? (
           <div className="text-center py-16 text-slate-400 text-xs">
-            Belum ada paket wisata di database. Klik "Tambah Paket Baru" untuk
-            memulai.
+            Belum ada paket wisata di database. Klik &quot;Tambah Paket
+            Baru&quot; untuk memulai.
           </div>
         ) : (
           <div className="overflow-x-auto">

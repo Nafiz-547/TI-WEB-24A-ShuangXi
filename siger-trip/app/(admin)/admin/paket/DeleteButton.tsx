@@ -33,10 +33,11 @@ export default function DeleteButton({
         throw new Error(data.error || "Gagal menghapus.");
       }
 
-      // Paksa Next.js me-refresh data tabel di background tanpa reload halaman penuh
       router.refresh();
-    } catch (error: any) {
-      alert(`⚠️ Error: ${error.message}`);
+    } catch (error: unknown) {
+      const errorMessage =
+        error instanceof Error ? error.message : "Terjadi kesalahan.";
+      alert(`⚠️ Error: ${errorMessage}`);
     } finally {
       setIsDeleting(false);
     }
