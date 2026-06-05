@@ -104,6 +104,30 @@ export default async function AdminPaketPage() {
                         />
                       </div>
                     </td>
+                    {/* Kolom Tombol Aksi yang Diperbarui */}
+                    <td className="py-4 px-6">
+                      <div className="flex items-center justify-center gap-2">
+                        {/* 💡 TOMBOL BARU: Kelola Rute Destinasi */}
+                        <Link
+                          href={`/admin/paket/${pkg.id}/rute`}
+                          className="px-3 py-1.5 rounded-lg border border-slate-200 hover:border-orange-500 hover:text-[#f78232] transition-all duration-200 bg-white font-bold text-[11px] active:scale-[0.98]"
+                        >
+                          📍 Kelola Rute
+                        </Link>
+
+                        <Link
+                          href={`/admin/paket/edit/${pkg.id}`}
+                          className="px-3 py-1.5 rounded-lg border border-slate-200 hover:border-blue-500 hover:text-blue-600 transition-all duration-200 bg-white font-semibold text-[11px] active:scale-[0.98]"
+                        >
+                          ✏️ Edit
+                        </Link>
+
+                        <DeleteButton
+                          packageId={pkg.id}
+                          packageTitle={pkg.title}
+                        />
+                      </div>
+                    </td>
                   </tr>
                 ))}
               </tbody>
