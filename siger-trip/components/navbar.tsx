@@ -36,7 +36,7 @@ export default function Navbar() {
               Destinasi
             </Link>
             <Link 
-              href="/tentang-kami" 
+              href="/tentang_kami" 
               className="text-slate-700 hover:text-amber-500 font-medium transition duration-200 text-sm sm:text-base"
             >
               Tentang Kami
