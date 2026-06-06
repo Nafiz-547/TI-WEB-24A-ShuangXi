@@ -24,33 +24,45 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
-header {
-  background-color: #ffffff;
-  color: #ededed;
-  padding: 0 1em;
-  height: 100px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  position: sticky;
-  top: 0;
-}
-
-footer {
-  background-color: #0a0a0a;
-  color: white;
-  padding: 1em;
-  text-align: center;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
 .content {
-  margin: 2.5em;
-  color: black;
-  text-align: justify;
+  margin: 0;
+  color: inherit;
+}
+
+/* Keep header/footer minimal — layout.tsx uses Tailwind classes for visuals */
+.site-header {
+  display: flex;
+  align-items: center;
+}
+
+.site-footer {
+  color: #e6e6e6;
+}
+
+/* Card typography for consistent readability */
+.card-title {
+  color: #0f172a;
+  font-weight: 700;
+  opacity: 1;
+  line-height: 1.2;
+}
+
+.card-desc {
+  color: #334155;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* Utility to ensure card stacks on mobile with image on top */
+.card-stack-mobile {
+  display: flex;
+  flex-direction: column;
+}
+.card-stack-mobile .card-media {
+  order: 0;
+}
+.card-stack-mobile .card-body {
+  order: 1;
 }
 
 .text-border {

@@ -50,15 +50,15 @@ export default async function CatalogPage() {
             {/* Informasi Detail Paket */}
             <div className="p-6 flex flex-col justify-between lg:w-3/5">
               <div>
-                <div className="flex items-center gap-2 text-xs text-slate-400 mb-1">
-                  <span>⏱️ {pkg.duration} Hari Perjalanan</span>
-                </div>
-                <h3 className="text-xl font-bold text-slate-800 mb-2 hover:text-[#f78232] transition-colors">
-                  {pkg.title}
-                </h3>
-                <p className="text-slate-600 text-sm line-clamp-3 mb-4">
-                  {pkg.description}
-                </p>
+                  <div className="flex items-center gap-2 text-xs text-[#334155] mb-1">
+                    <span>⏱️ {pkg.duration} Hari Perjalanan</span>
+                  </div>
+                  <h3 className="card-title text-xl mb-2 hover:text-[#f78232] transition-colors">
+                    {pkg.title}
+                  </h3>
+                  <p className="card-desc text-sm line-clamp-3 mb-4">
+                    {pkg.description}
+                  </p>
               </div>
 
               {/* Harga & Tombol Aksi */}
