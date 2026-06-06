@@ -136,9 +136,9 @@ export default async function PackageDetailPage({
                     {/* Detail Informasi Destinasi */}
                     <div className="p-5 sm:w-2/3 flex flex-col justify-between">
                       <div>
-                        <h4 className="text-lg font-bold text-slate-800">{dest.name}</h4>
-                        <p className="text-xs text-slate-400 mt-0.5">📍 {dest.location}</p>
-                        <p className="text-slate-600 text-xs md:text-sm mt-3 leading-relaxed line-clamp-3">
+                        <h4 className="card-title text-lg">{dest.name}</h4>
+                        <p className="card-desc text-xs mt-0.5">📍 {dest.location}</p>
+                        <p className="card-desc text-xs md:text-sm mt-3 leading-relaxed line-clamp-3">
                           {dest.description}
                         </p>
                       </div>

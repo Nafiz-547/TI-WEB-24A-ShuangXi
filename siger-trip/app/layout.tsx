@@ -38,8 +38,10 @@ export default function RootLayout({
         </main>
         
         {/* Footer */}
-        <footer className="bg-white border-t py-6 text-center text-sm text-gray-500">
-          Copyright &copy; 2026 - SigerTrip. All rights reserved.
+        <footer className="bg-slate-900 text-slate-200 border-t border-slate-800">
+          <div className="max-w-7xl mx-auto px-4 py-6 text-center text-sm text-slate-400">
+            © 2026 SigerTrip. All rights reserved.
+          </div>
         </footer>
 
       </body>

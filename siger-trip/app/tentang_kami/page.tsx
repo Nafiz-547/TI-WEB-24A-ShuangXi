@@ -29,30 +29,30 @@ export default function AboutPage() {
       <section className="mx-auto max-w-6xl px-6 py-20 sm:px-10 lg:px-16">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-semibold text-slate-900">Apa yang Kami Tawarkan?</h2>
-          <p className="mt-4 text-lg text-slate-600">SigerTrip menyediakan pengalaman wisata Lampung yang sempurna dengan nilai-nilai utama kami</p>
+          <p className="mt-4 text-lg card-desc">SigerTrip menyediakan pengalaman wisata Lampung yang sempurna dengan nilai-nilai utama kami</p>
         </div>
 
         <div className="grid gap-12 lg:grid-cols-3 mb-20">
           <div className="text-center">
             <div className="text-4xl mb-6 text-slate-400">✱</div>
-            <h3 className="text-xl font-semibold text-slate-900 mb-3">Filosofi Kami</h3>
-            <p className="text-slate-600 leading-7">
+            <h3 className="card-title text-xl mb-3">Filosofi Kami</h3>
+            <p className="card-desc leading-7">
               Mengubah perjalanan menjadi cerita bermakna. Kami percaya setiap destinasi memiliki cerita unik yang menghubungkan wisatawan dengan budaya lokal Lampung.
             </p>
           </div>
 
           <div className="text-center">
             <div className="text-4xl mb-6 text-slate-400">✱</div>
-            <h3 className="text-xl font-semibold text-slate-900 mb-3">Visi Kami</h3>
-            <p className="text-slate-600 leading-7">
+            <h3 className="card-title text-xl mb-3">Visi Kami</h3>
+            <p className="card-desc leading-7">
               Menjadi travel partner terbaik untuk wisata Lampung. Kami ingin menjadi pilihan utama wisatawan yang mencari pengalaman autentik dan tak terlupakan.
             </p>
           </div>
 
           <div className="text-center">
             <div className="text-4xl mb-6 text-slate-400">✱</div>
-            <h3 className="text-xl font-semibold text-slate-900 mb-3">Misi Kami</h3>
-            <p className="text-slate-600 leading-7">
+            <h3 className="card-title text-xl mb-3">Misi Kami</h3>
+            <p className="card-desc leading-7">
               Menyajikan perjalanan mudah dan inspiratif. Kami berkomitmen memberikan itinerari terencana dengan dukungan lokal penuh di setiap langkah.
             </p>
           </div>
@@ -61,38 +61,38 @@ export default function AboutPage() {
         <div className="grid gap-12 lg:grid-cols-2 items-start">
           <div>
             <div className="text-4xl mb-6 text-slate-400">✱</div>
-            <h3 className="text-2xl font-semibold text-slate-900 mb-6">Nilai-Nilai Kami</h3>
+            <h3 className="card-title text-2xl mb-6">Nilai-Nilai Kami</h3>
             <div className="space-y-5">
               <div>
-                <h4 className="font-semibold text-slate-900 mb-2">1. Autentik</h4>
-                <p className="text-slate-600">Mengutamakan pengalaman lokal yang nyata dan bukan sekadar wisata komersial biasa.</p>
+                <h4 className="card-title mb-2">1. Autentik</h4>
+                <p className="card-desc">Mengutamakan pengalaman lokal yang nyata dan bukan sekadar wisata komersial biasa.</p>
               </div>
               <div>
-                <h4 className="font-semibold text-slate-900 mb-2">2. Terpercaya</h4>
-                <p className="text-slate-600">Transparansi harga, itinerari jelas, dan layanan dapat diandalkan adalah prioritas kami.</p>
+                <h4 className="card-title mb-2">2. Terpercaya</h4>
+                <p className="card-desc">Transparansi harga, itinerari jelas, dan layanan dapat diandalkan adalah prioritas kami.</p>
               </div>
               <div>
-                <h4 className="font-semibold text-slate-900 mb-2">3. Terjangkau</h4>
-                <p className="text-slate-600">Paket seimbang antara kualitas pengalaman dan nilai uang tanpa mengorbankan kenyamanan.</p>
+                <h4 className="card-title mb-2">3. Terjangkau</h4>
+                <p className="card-desc">Paket seimbang antara kualitas pengalaman dan nilai uang tanpa mengorbankan kenyamanan.</p>
               </div>
             </div>
           </div>
 
           <div>
             <div className="text-4xl mb-6 text-slate-400">✱</div>
-            <h3 className="text-2xl font-semibold text-slate-900 mb-6">Fokus Layanan Kami</h3>
+            <h3 className="card-title text-2xl mb-6">Fokus Layanan Kami</h3>
             <div className="space-y-5">
               <div>
-                <h4 className="font-semibold text-slate-900 mb-2">1. Perjalanan Mudah</h4>
-                <p className="text-slate-600">Proses pemesanan sederhana dari awal hingga akhir dengan dukungan tim yang responsive.</p>
+                <h4 className="card-title mb-2">1. Perjalanan Mudah</h4>
+                <p className="card-desc">Proses pemesanan sederhana dari awal hingga akhir dengan dukungan tim yang responsive.</p>
               </div>
               <div>
-                <h4 className="font-semibold text-slate-900 mb-2">2. Pengalaman Berkualitas</h4>
-                <p className="text-slate-600">Destinasi pilihan, guide berpengalaman, dan aktivitas yang dirancang khusus untuk Anda.</p>
+                <h4 className="card-title mb-2">2. Pengalaman Berkualitas</h4>
+                <p className="card-desc">Destinasi pilihan, guide berpengalaman, dan aktivitas yang dirancang khusus untuk Anda.</p>
               </div>
               <div>
-                <h4 className="font-semibold text-slate-900 mb-2">3. Dukungan Penuh</h4>
-                <p className="text-slate-600">Layanan personal dari perencanaan hingga perjalanan selesai dengan bantuan 24/7.</p>
+                <h4 className="card-title mb-2">3. Dukungan Penuh</h4>
+                <p className="card-desc">Layanan personal dari perencanaan hingga perjalanan selesai dengan bantuan 24/7.</p>
               </div>
             </div>
           </div>
@@ -113,12 +113,12 @@ export default function AboutPage() {
                   <span key={i} className="text-amber-400 text-xl">★</span>
                 ))}
               </div>
-              <p className="text-base leading-7 text-slate-600 mb-6">
+              <p className="text-base leading-7 card-desc mb-6">
                 &apos;Perjalanan 7 hari bersama SigerTrip adalah yang terbaik! Guide kami sangat ramah, itinerari sempurna, dan kami bertemu banyak teman baru. Highly recommended!&apos;
               </p>
               <div className="border-t border-slate-200 pt-4">
-                <p className="font-semibold text-slate-900">Sarah Putri</p>
-                <p className="text-sm text-slate-500">Jakarta</p>
+                <p className="card-title">Sarah Putri</p>
+                <p className="card-desc text-sm">Jakarta</p>
               </div>
             </div>
 
@@ -128,12 +128,12 @@ export default function AboutPage() {
                   <span key={i} className="text-amber-400 text-xl">★</span>
                 ))}
               </div>
-              <p className="text-base leading-7 text-slate-600 mb-6">
+              <p className="text-base leading-7 card-desc mb-6">
                 &apos;Harga yang terjangkau namun kualitas layanan luar biasa. Destinasi yang dikunjungi tidak membosankan, semuanya tersembunyi dan indah. Pasti balik ke Lampung!&apos;
               </p>
               <div className="border-t border-slate-200 pt-4">
-                <p className="font-semibold text-slate-900">Ahmad Rizki</p>
-                <p className="text-sm text-slate-500">Bandung</p>
+                <p className="card-title">Ahmad Rizki</p>
+                <p className="card-desc text-sm">Bandung</p>
               </div>
             </div>
 
@@ -143,12 +143,12 @@ export default function AboutPage() {
                   <span key={i} className="text-amber-400 text-xl">★</span>
                 ))}
               </div>
-              <p className="text-base leading-7 text-slate-600 mb-6">
+              <p className="text-base leading-7 card-desc mb-6">
                 &apos;SigerTrip bukan hanya tentang wisata, tapi tentang belajar dan mengalami. Tim mereka benar-benar peduli dengan kepuasan kami. Terima kasih SigerTrip!&apos;
               </p>
               <div className="border-t border-slate-200 pt-4">
-                <p className="font-semibold text-slate-900">Dewi Lestari</p>
-                <p className="text-sm text-slate-500">Surabaya</p>
+                <p className="card-title">Dewi Lestari</p>
+                <p className="card-desc text-sm">Surabaya</p>
               </div>
             </div>
 
@@ -158,12 +158,12 @@ export default function AboutPage() {
                   <span key={i} className="text-amber-400 text-xl">★</span>
                 ))}
               </div>
-              <p className="text-base leading-7 text-slate-600 mb-6">
+              <p className="text-base leading-7 card-desc mb-6">
                 &apos;Saya traveling solo dan merasa 100% aman. Destinasi yang dipilih sangat unik, tidak seperti paket wisata biasanya. Benar-benar adventure yang autentik!&apos;
               </p>
               <div className="border-t border-slate-200 pt-4">
-                <p className="font-semibold text-slate-900">Budi Santoso</p>
-                <p className="text-sm text-slate-500">Yogyakarta</p>
+                <p className="card-title">Budi Santoso</p>
+                <p className="card-desc text-sm">Yogyakarta</p>
               </div>
             </div>
 
@@ -173,12 +173,12 @@ export default function AboutPage() {
                   <span key={i} className="text-amber-400 text-xl">★</span>
                 ))}
               </div>
-              <p className="text-base leading-7 text-slate-600 mb-6">
+              <p className="text-base leading-7 card-desc mb-6">
                 &apos;Keluarga kami sangat puas. Anak-anak belajar banyak tentang budaya Lampung, dan kami tenang karena semua sudah diatur dengan baik oleh SigerTrip.&apos;
               </p>
               <div className="border-t border-slate-200 pt-4">
-                <p className="font-semibold text-slate-900">Ibu Siti</p>
-                <p className="text-sm text-slate-500">Medan</p>
+                <p className="card-title">Ibu Siti</p>
+                <p className="card-desc text-sm">Medan</p>
               </div>
             </div>
 
@@ -188,12 +188,12 @@ export default function AboutPage() {
                   <span key={i} className="text-amber-400 text-xl">★</span>
                 ))}
               </div>
-              <p className="text-base leading-7 text-slate-600 mb-6">
+              <p className="text-base leading-7 card-desc mb-6">
                 &apos;Transparansi harga dan tidak ada hidden cost. Destinasi menarik, makanan lezat, dan guide yang berpengetahuan luas. Sangat worth it!&apos;
               </p>
               <div className="border-t border-slate-200 pt-4">
-                <p className="font-semibold text-slate-900">Rian Wijaya</p>
-                <p className="text-sm text-slate-500">Semarang</p>
+                <p className="card-title">Rian Wijaya</p>
+                <p className="card-desc text-sm">Semarang</p>
               </div>
             </div>
           </div>
