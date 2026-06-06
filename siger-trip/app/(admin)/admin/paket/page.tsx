@@ -89,21 +89,6 @@ export default async function AdminPaketPage() {
                     <td className="py-4 px-6 font-bold text-[#f78232]">
                       {pkg.basePrice}
                     </td>
-                    {/* Kolom Tombol Aksi */}
-                    <td className="py-4 px-6">
-                      <div className="flex items-center justify-center gap-2">
-                        <Link
-                          href={`/admin/paket/edit/${pkg.id}`}
-                          className="px-3 py-1.5 rounded-lg border border-slate-200 hover:border-blue-500 hover:text-blue-600 transition-colors bg-white font-semibold text-[11px]"
-                        >
-                          ✏️ Edit
-                        </Link>
-                        <DeleteButton
-                          packageId={pkg.id}
-                          packageTitle={pkg.title}
-                        />
-                      </div>
-                    </td>
                     {/* Kolom Tombol Aksi yang Diperbarui */}
                     <td className="py-4 px-6">
                       <div className="flex items-center justify-center gap-2">
