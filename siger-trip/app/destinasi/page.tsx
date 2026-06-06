@@ -1,11 +1,11 @@
 import { prisma } from "@/lib/prisma";
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
 
 export default async function CatalogPage() {
   // 1. Ambil semua data paket dari database PostgreSQL
   const packages = await prisma.package.findMany({
-    orderBy: { createdAt: 'desc' }
+    orderBy: { createdAt: "desc" },
   });
 
   return (
@@ -18,24 +18,26 @@ export default async function CatalogPage() {
         <h1 className="text-3xl md:text-4xl font-bold text-slate-800 mt-3">
           Pilih Paket Wisata <span className="text-[#f78232]">SigerTrip</span>
         </h1>
-        <p className="text-slate-600 mt-2">Bundel itinerary terstruktur rancangan pemandu lokal Lampung</p>
+        <p className="text-slate-600 mt-2">
+          Bundel itinerary terstruktur rancangan pemandu lokal Lampung
+        </p>
       </div>
 
       {/* GRID DAFTAR PAKET */}
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
         {packages.map((pkg) => (
-          <div 
-            key={pkg.id} 
+          <div
+            key={pkg.id}
             className="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col lg:flex-row"
           >
             {/* Banner Utama Paket */}
-            <div className="relative h-48 lg:h-auto lg:w-2/5 min-h-[200px] overflow-hidden group">
-              <Image 
+            <div className="relative h-48 lg:h-auto lg:w-2/5 min-h-50 overflow-hidden group">
+              <Image
                 src={
                   pkg.image
-                    ? pkg.image.replace('public', '').replace(/\\/g, '/')
+                    ? pkg.image.replace("public", "").replace(/\\/g, "/")
                     : "/images/siger."
-                } 
+                }
                 alt={pkg.title}
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -62,12 +64,16 @@ export default async function CatalogPage() {
               {/* Harga & Tombol Aksi */}
               <div className="flex justify-between items-center border-t pt-4">
                 <div>
-                  <p className="text-[10px] text-slate-400 uppercase tracking-wider">Mulai Dari</p>
-                  <span className="text-lg font-extrabold text-[#f78232]">{pkg.basePrice}</span>
+                  <p className="text-[10px] text-slate-400 uppercase tracking-wider">
+                    Mulai Dari
+                  </p>
+                  <span className="text-lg font-extrabold text-[#f78232]">
+                    {pkg.basePrice}
+                  </span>
                 </div>
                 {/* Link menuju halaman detail itinerary per hari */}
-                <Link 
-                  href={`/destinasi/${pkg.id}`} 
+                <Link
+                  href={`/destinasi/${pkg.id}`}
                   className="bg-slate-900 text-white text-xs font-bold px-4 py-2.5 rounded-xl hover:bg-[#f78232] hover:shadow-lg hover:shadow-orange-500/20 transition-all duration-200"
                 >
                   Lihat Itinerary →
