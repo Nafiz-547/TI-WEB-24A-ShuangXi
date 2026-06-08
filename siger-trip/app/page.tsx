@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import SorotanKuliner from "../components/SorotanKuliner";
+import TentangLampung from "../components/TentangLampung";
 
 export default function HomePage() {
   return (
@@ -189,6 +190,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      <TentangLampung />
       <SorotanKuliner />
 
       {/* SOROTAN DESTINASI ALAM */}
