@@ -112,9 +112,7 @@ export default function HomePage() {
               { title: 'Harga transparan dan kompetitif', image: '/images/Harga transparan dan kompetitif.webp', alt: 'Harga transparan dan kompetitif', useImage: true },
               { title: 'Driver berpengalaman', image: '/images/driver berpengalaman home.webp', alt: 'Driver berpengalaman', useImage: true },
               { title: 'Kendaraan bersih dan nyaman', image: '/images/Kendaraan bersih dan nyaman.webp', alt: 'Kendaraan bersih dan nyaman', useImage: true },
-              { title: 'Pelayanan ramah dan responsif', icon: (
-                <svg className="h-8 w-8 text-amber-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
-              )},
+              { title: 'Pelayanan ramah dan responsif', image: '/images/Pelayanan ramah dan responsif home.webp', alt: 'Pelayanan ramah dan responsif', useImage: true },
               { title: 'Destinasi wisata terbaik di Lampung', icon: (
                 <svg className="h-8 w-8 text-amber-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/></svg>
               )},
