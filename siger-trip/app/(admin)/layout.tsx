@@ -14,7 +14,7 @@ export default function AdminLayout({
           <h2 className="text-lg font-black text-white tracking-wider flex items-center gap-2">
             ⚡ SIGERTRIP <span className="text-xs bg-[#f78232] text-white px-2 py-0.5 rounded font-bold">ADMIN</span>
           </h2>
-          <p className="text-[10px] text-slate-500 mt-1 uppercase font-semibold tracking-wider">UKM Programming Protek</p>
+          <p className="text-[10px] text-slate-500 mt-1 uppercase font-semibold tracking-wider">Halaman Admin</p>
         </div>
 
         {/* MENU NAVIGASI INTERNAL ADMIN */}
