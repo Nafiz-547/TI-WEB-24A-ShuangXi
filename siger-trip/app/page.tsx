@@ -109,9 +109,7 @@ export default function HomePage() {
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { title: 'Harga transparan dan kompetitif', icon: (
-                <svg className="h-8 w-8 text-amber-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 1v22" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/><path d="M17 5H7a3 3 0 000 6h10a3 3 0 010 6H7" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
-              )},
+              { title: 'Harga transparan dan kompetitif', image: '/images/Harga transparan dan kompetitif.webp', alt: 'Harga transparan dan kompetitif', useImage: true },
               { title: 'Driver berpengalaman', icon: (
                 <svg className="h-8 w-8 text-amber-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12c0-4 4-7 9-7s9 3 9 7v5a1 1 0 01-1 1h-4v-3H8v3H4a1 1 0 01-1-1v-5z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/><circle cx="12" cy="8" r="2" stroke="currentColor" strokeWidth="1.6"/></svg>
               )},
@@ -134,12 +132,26 @@ export default function HomePage() {
                 <svg className="h-8 w-8 text-amber-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 10a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/><path d="M8 14s1-1 4-1 4 1 4 1" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>
               )}
             ].map((b) => (
-              <div key={b.title} className="group rounded-2xl border border-gray-100 p-6 bg-white shadow-sm hover:shadow-lg transition-shadow duration-300 hover:-translate-y-1 transform">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-amber-50 text-amber-600">{b.icon}</div>
-                  <h4 className="card-title text-lg">{b.title}</h4>
-                </div>
-                <p className="card-desc text-sm">Kami memastikan setiap poin ini menjadi bagian dari pengalaman Anda bersama Siger Trip.</p>
+              <div key={b.title} className="group rounded-2xl border border-gray-100 bg-white shadow-sm hover:shadow-lg transition-shadow duration-300 hover:-translate-y-1 transform overflow-hidden">
+                {b.useImage ? (
+                  <>
+                    <div className="relative h-48 w-full overflow-hidden bg-gray-200">
+                      <Image src={b.image} alt={b.alt} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                    </div>
+                    <div className="p-5">
+                      <h4 className="card-title text-base md:text-lg font-semibold text-gray-900 mb-2">{b.title}</h4>
+                      <p className="card-desc text-sm">Kami memastikan setiap poin ini menjadi bagian dari pengalaman Anda bersama Siger Trip.</p>
+                    </div>
+                  </>
+                ) : (
+                  <div className="p-6">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-amber-50 text-amber-600">{b.icon}</div>
+                      <h4 className="card-title text-lg">{b.title}</h4>
+                    </div>
+                    <p className="card-desc text-sm">Kami memastikan setiap poin ini menjadi bagian dari pengalaman Anda bersama Siger Trip.</p>
+                  </div>
+                )}
               </div>
             ))}
           </div>
