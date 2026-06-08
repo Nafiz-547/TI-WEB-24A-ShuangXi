@@ -114,9 +114,7 @@ export default function HomePage() {
               { title: 'Kendaraan bersih dan nyaman', image: '/images/Kendaraan bersih dan nyaman.webp', alt: 'Kendaraan bersih dan nyaman', useImage: true },
               { title: 'Pelayanan ramah dan responsif', image: '/images/Pelayanan ramah dan responsif home.webp', alt: 'Pelayanan ramah dan responsif', useImage: true },
               { title: 'Destinasi wisata terbaik di Lampung', image: '/images/gedung siger home.webp', alt: 'Destinasi wisata terbaik di Lampung', useImage: true },
-              { title: 'Fleksibel menyesuaikan kebutuhan pelanggan', icon: (
-                <svg className="h-8 w-8 text-amber-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12h18M12 3v18" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/></svg>
-              )},
+              { title: 'Fleksibel menyesuaikan kebutuhan pelanggan', image: '/images/fleksibel menyesuaikan kebutuhan pelanggan.webp', alt: 'Fleksibel menyesuaikan kebutuhan pelanggan', useImage: true },
               { title: 'Proses booking mudah', icon: (
                 <svg className="h-8 w-8 text-amber-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" strokeWidth="1.6"/><path d="M16 2v4M8 2v4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/></svg>
               )},
