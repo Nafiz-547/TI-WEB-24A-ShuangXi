@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import DestinasiAlam from "../components/DestinasiAlam";
 import SorotanKuliner from "../components/SorotanKuliner";
 import TentangLampung from "../components/TentangLampung";
 
@@ -192,32 +193,7 @@ export default function HomePage() {
 
       <TentangLampung />
       <SorotanKuliner />
-
-      {/* SOROTAN DESTINASI ALAM */}
-      <section id="alam" className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Sorotan Destinasi Alam</h3>
-          <div className="grid gap-6 md:grid-cols-2">
-            {/* Anak Gunung Krakatau */}
-            <article className="rounded-lg bg-gray-50 border p-6 shadow-sm flex flex-col sm:flex-row gap-4 items-start card-stack-mobile">
-              <Image src="/images/Anak%20Gunung%20Krakatau%20home.webp" alt="Anak Gunung Krakatau" width={180} height={120} className="rounded-md object-cover" />
-              <div className="card-body">
-                <h4 className="card-title text-lg mb-2">Anak Gunung Krakatau</h4>
-                <p className="card-desc mb-2">Anak Gunung Krakatau menjadi sorotan karena latar sejarah vulkanik yang dramatis dan proses geologi yang masih aktif. Wisatawan tertarik untuk melihat fenomena alam ini serta belajar tentang dampak sejarah letusan pada wilayah sekitarnya.</p>
-              </div>
-            </article>
-
-            {/* Way Kambas */}
-            <article className="rounded-lg bg-gray-50 border p-6 shadow-sm flex flex-col sm:flex-row gap-4 items-start card-stack-mobile">
-              <Image src="/images/Way%20Kambas%20home.webp" alt="Way Kambas" width={180} height={120} className="rounded-md object-cover" />
-              <div className="card-body">
-                <h4 className="card-title text-lg mb-2">Way Kambas</h4>
-                <p className="card-desc mb-2">Way Kambas adalah pusat konservasi gajah dan ekowisata yang terkenal. Populer karena program konservasi yang berfokus pada pengunjung ramah lingkungan dan pengalaman interaksi satwa yang edukatif.</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
+      <DestinasiAlam />
 
       {/* Bagian selanjutnya (misal ringkasan jasa) bisa diteruskan Tama di bawah sini */}
     </main>
