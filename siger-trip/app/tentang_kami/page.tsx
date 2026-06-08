@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import TestimonialSlider from "./TestimonialSlider";
 
 
 export default function AboutPage() {
@@ -35,6 +36,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+    
 
       <section className="mx-auto max-w-6xl px-6 py-20 sm:px-10 lg:px-16">
         <div className="text-center mb-16">
@@ -109,6 +112,55 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-6xl px-6 py-20 sm:px-10 lg:px-16 bg-slate-50 rounded-3xl shadow-sm border border-slate-200/80">
+        <div className="text-center mb-12">
+          <p className="text-sm uppercase tracking-[0.28em] text-amber-500">Paket Unggulan</p>
+          <h2 className="mt-4 text-4xl font-semibold text-slate-900">Apa yang Bisa Kamu Dapatkan</h2>
+          <p className="mt-4 text-lg text-slate-600">Pilih paket yang sesuai dengan gaya liburanmu: santai, petualangan, atau eksplorasi budaya Lampung tanpa ribet.</p>
+        </div>
+
+        <div className="grid gap-8 lg:grid-cols-3">
+          <div className="rounded-3xl bg-white p-8 shadow-lg border border-slate-200/80">
+            <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-amber-100 text-amber-500">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2a2 2 0 0 0-2 2v1.07A7 7 0 0 0 5 12v5a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3v-5a7 7 0 0 0-5-6.93V4a2 2 0 0 0-2-2zM8 20a1 1 0 0 1-1-1v-4a6 6 0 0 1 12 0v4a1 1 0 0 1-1 1H8z" />
+              </svg>
+            </div>
+            <h3 className="text-2xl font-semibold text-slate-900 mb-4">Paket Wisata Budaya</h3>
+            <p className="text-slate-600 leading-7 mb-6">Jelajahi warisan budaya Lampung, candi, rumah adat, dan festival lokal dengan itinerari yang nyaman.</p>
+            <div className="inline-flex items-center gap-2 text-amber-500 font-semibold">
+              <span>Mulai dari Rp 2.499.000</span>
+            </div>
+          </div>
+
+          <div className="rounded-3xl bg-white p-8 shadow-lg border border-slate-200/80">
+            <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 text-blue-500">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2l3 7h7l-5.5 4 2 7L12 17l-6.5 3 2-7L2 9h7z" />
+              </svg>
+            </div>
+            <h3 className="text-2xl font-semibold text-slate-900 mb-4">Paket Petualangan</h3>
+            <p className="text-slate-600 leading-7 mb-6">Rasakan trekking, snorkeling, dan perjalanan pantai eksklusif yang dirancang untuk penjelajah sejati.</p>
+            <div className="inline-flex items-center gap-2 text-amber-500 font-semibold">
+              <span>Mulai dari Rp 3.299.000</span>
+            </div>
+          </div>
+
+          <div className="rounded-3xl bg-white p-8 shadow-lg border border-slate-200/80">
+            <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-green-100 text-green-500">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-4 0-8 2-8 5v1h16v-1c0-3-4-5-8-5z" />
+              </svg>
+            </div>
+            <h3 className="text-2xl font-semibold text-slate-900 mb-4">Paket Keluarga</h3>
+            <p className="text-slate-600 leading-7 mb-6">Nikmati perjalanan ramah keluarga dengan aktivitas seru, penginapan nyaman, dan layanan ramah anak.</p>
+            <div className="inline-flex items-center gap-2 text-amber-500 font-semibold">
+              <span>Mulai dari Rp 3.799.000</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="mx-auto max-w-6xl px-6 py-20 sm:px-10 lg:px-16">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-semibold text-slate-900">Tim Kami</h2>
@@ -175,106 +227,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-linear-to-b from-slate-100 to-slate-50 py-20">
-        <div className="mx-auto max-w-4xl px-6 sm:px-10 lg:px-16">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-semibold text-slate-900">Testimoni Traveler Kami</h2>
-            <p className="mt-4 text-lg text-slate-600">Cerita inspiratif dari wisatawan yang telah merasakan petualangan bersama SigerTrip</p>
-          </div>
-
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="rounded-2xl bg-white p-8 shadow-lg shadow-slate-900/5 border border-slate-200/50">
-              <div className="flex gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-amber-400 text-xl">★</span>
-                ))}
-              </div>
-              <p className="text-base leading-7 card-desc mb-6">
-                &apos;Perjalanan 7 hari bersama SigerTrip adalah yang terbaik! Guide kami sangat ramah, itinerari sempurna, dan kami bertemu banyak teman baru. Highly recommended!&apos;
-              </p>
-              <div className="border-t border-slate-200 pt-4">
-                <p className="card-title">Sarah Putri</p>
-                <p className="card-desc text-sm">Jakarta</p>
-              </div>
-            </div>
-
-            <div className="rounded-2xl bg-white p-8 shadow-lg shadow-slate-900/5 border border-slate-200/50">
-              <div className="flex gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-amber-400 text-xl">★</span>
-                ))}
-              </div>
-              <p className="text-base leading-7 card-desc mb-6">
-                &apos;Harga yang terjangkau namun kualitas layanan luar biasa. Destinasi yang dikunjungi tidak membosankan, semuanya tersembunyi dan indah. Pasti balik ke Lampung!&apos;
-              </p>
-              <div className="border-t border-slate-200 pt-4">
-                <p className="card-title">Ahmad Rizki</p>
-                <p className="card-desc text-sm">Bandung</p>
-              </div>
-            </div>
-
-            <div className="rounded-2xl bg-white p-8 shadow-lg shadow-slate-900/5 border border-slate-200/50">
-              <div className="flex gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-amber-400 text-xl">★</span>
-                ))}
-              </div>
-              <p className="text-base leading-7 card-desc mb-6">
-                &apos;SigerTrip bukan hanya tentang wisata, tapi tentang belajar dan mengalami. Tim mereka benar-benar peduli dengan kepuasan kami. Terima kasih SigerTrip!&apos;
-              </p>
-              <div className="border-t border-slate-200 pt-4">
-                <p className="card-title">Dewi Lestari</p>
-                <p className="card-desc text-sm">Surabaya</p>
-              </div>
-            </div>
-
-            <div className="rounded-2xl bg-white p-8 shadow-lg shadow-slate-900/5 border border-slate-200/50">
-              <div className="flex gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-amber-400 text-xl">★</span>
-                ))}
-              </div>
-              <p className="text-base leading-7 card-desc mb-6">
-                &apos;Saya traveling solo dan merasa 100% aman. Destinasi yang dipilih sangat unik, tidak seperti paket wisata biasanya. Benar-benar adventure yang autentik!&apos;
-              </p>
-              <div className="border-t border-slate-200 pt-4">
-                <p className="card-title">Budi Santoso</p>
-                <p className="card-desc text-sm">Yogyakarta</p>
-              </div>
-            </div>
-
-            <div className="rounded-2xl bg-white p-8 shadow-lg shadow-slate-900/5 border border-slate-200/50">
-              <div className="flex gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-amber-400 text-xl">★</span>
-                ))}
-              </div>
-              <p className="text-base leading-7 card-desc mb-6">
-                &apos;Keluarga kami sangat puas. Anak-anak belajar banyak tentang budaya Lampung, dan kami tenang karena semua sudah diatur dengan baik oleh SigerTrip.&apos;
-              </p>
-              <div className="border-t border-slate-200 pt-4">
-                <p className="card-title">Ibu Siti</p>
-                <p className="card-desc text-sm">Medan</p>
-              </div>
-            </div>
-
-            <div className="rounded-2xl bg-white p-8 shadow-lg shadow-slate-900/5 border border-slate-200/50">
-              <div className="flex gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-amber-400 text-xl">★</span>
-                ))}
-              </div>
-              <p className="text-base leading-7 card-desc mb-6">
-                &apos;Transparansi harga dan tidak ada hidden cost. Destinasi menarik, makanan lezat, dan guide yang berpengetahuan luas. Sangat worth it!&apos;
-              </p>
-              <div className="border-t border-slate-200 pt-4">
-                <p className="card-title">Rian Wijaya</p>
-                <p className="card-desc text-sm">Semarang</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <TestimonialSlider />
     </main>
   );
 }
