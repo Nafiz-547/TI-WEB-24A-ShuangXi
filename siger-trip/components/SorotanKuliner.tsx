@@ -9,7 +9,7 @@ export default function SorotanKuliner() {
       desc: 'Gulai Taboh berakar dari tradisi pesisir Lampung; kuah santan kaya rempah dibuat dengan bahan lokal dan ikan segar. Kepopulerannya datang dari rasa kuat rempah dan keterikatan pada budaya lokal.',
       img: '/images/Gulai%20Taboh%20Ikan%20khas%20Lampung%20home.webp',
       alt: 'Gulai Taboh Ikan khas Lampung',
-      href: '/destinasi?filter=kuliner&item=gulai-taboh'
+      href: 'https://www.indonesia.travel/id/id/travel-ideas/gastronomy/gulai-taboh/'
     },
     {
       id: 'seruit',
@@ -62,7 +62,12 @@ export default function SorotanKuliner() {
                   </div>
 
                   <div className="mt-6">
-                    <Link href={it.href} className="inline-flex items-center px-4 py-2 bg-amber-500 text-white rounded-md font-medium shadow-sm hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2 transition">
+                    <Link
+                      href={it.href}
+                      target={it.href.startsWith('http') ? '_blank' : undefined}
+                      rel={it.href.startsWith('http') ? 'noreferrer' : undefined}
+                      className="inline-flex items-center px-4 py-2 bg-amber-500 text-white rounded-md font-medium shadow-sm hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2 transition"
+                    >
                       Lihat Detail
                     </Link>
                   </div>
