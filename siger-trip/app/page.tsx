@@ -116,9 +116,7 @@ export default function HomePage() {
               { title: 'Destinasi wisata terbaik di Lampung', image: '/images/gedung siger home.webp', alt: 'Destinasi wisata terbaik di Lampung', useImage: true },
               { title: 'Fleksibel menyesuaikan kebutuhan pelanggan', image: '/images/fleksibel menyesuaikan kebutuhan pelanggan.webp', alt: 'Fleksibel menyesuaikan kebutuhan pelanggan', useImage: true },
               { title: 'Proses booking mudah', image: '/images/Proses booking mudah.webp', alt: 'Proses booking mudah', useImage: true },
-              { title: 'Dukungan customer service', icon: (
-                <svg className="h-8 w-8 text-amber-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 10a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/><path d="M8 14s1-1 4-1 4 1 4 1" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>
-              )}
+              { title: 'Dukungan customer service', image: '/images/Dukungan customer service.webp', alt: 'Dukungan customer service', useImage: true }
             ].map((b) => (
               <div key={b.title} className="group rounded-2xl border border-gray-100 bg-white shadow-sm hover:shadow-lg transition-shadow duration-300 hover:-translate-y-1 transform overflow-hidden">
                 {b.useImage ? (
