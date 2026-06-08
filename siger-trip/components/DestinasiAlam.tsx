@@ -25,7 +25,7 @@ export default function DestinasiAlam() {
     <section id="alam" aria-labelledby="destinasi-alam-title" className="py-16 bg-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="mb-10 max-w-3xl">
-          <span className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-sm font-medium text-emerald-700">🌿 Wisata Lampung</span>
+          <span className="inline-flex items-center gap-2 rounded-full bg-amber-100 px-3 py-1 text-sm font-medium text-amber-700">🌿 Wisata Lampung</span>
           <h3 id="destinasi-alam-title" className="mt-4 text-3xl md:text-4xl font-bold text-slate-900">Destinasi Alam Favorit</h3>
           <p className="mt-3 text-gray-600 text-base md:text-lg">Jelajahi keindahan alam Lampung mulai dari pulau eksotis, pantai menawan, hingga destinasi wisata yang memikat wisatawan dari berbagai daerah.</p>
         </div>
@@ -43,14 +43,14 @@ export default function DestinasiAlam() {
                 />
                 <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-950/60 via-slate-950/10 to-transparent" aria-hidden="true" />
                 <div className="absolute inset-x-0 bottom-0 p-4 text-white">
-                  <p className="text-sm font-semibold uppercase tracking-[0.12em] text-emerald-200">Destinasi Alam</p>
+                  <p className="text-sm font-semibold uppercase tracking-[0.12em] text-amber-200">Destinasi Alam</p>
                   <h4 className="mt-2 text-xl font-semibold leading-tight">{destination.title}</h4>
                 </div>
               </div>
 
               <div className="p-5 sm:p-6">
                 <div className="mb-3 flex items-center gap-2 text-sm text-slate-500">
-                  <svg className="h-4 w-4 text-emerald-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8 2 5 5 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-4-3-7-7-7z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/><circle cx="12" cy="9" r="2" fill="currentColor"/></svg>
+                  <svg className="h-4 w-4 text-amber-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8 2 5 5 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-4-3-7-7-7z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/><circle cx="12" cy="9" r="2" fill="currentColor"/></svg>
                   <span>{destination.location}</span>
                 </div>
                 <p className="text-gray-700 text-sm leading-6" style={{ display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
@@ -59,7 +59,7 @@ export default function DestinasiAlam() {
                 <div className="mt-5">
                   <Link
                     href="/destinasi"
-                    className="inline-flex items-center rounded-full bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2"
+                    className="inline-flex items-center rounded-full bg-amber-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2"
                   >
                     Pelajari Destinasi
                   </Link>
