@@ -8,7 +8,7 @@ export default function Navbar() {
         <div className="flex justify-between h-16 items-center">
 
           {/* Logo SigerTrip (responsive sizing, maintain aspect ratio) */}
-          <div className="flex-shrink-0 flex items-center">
+          <div className="shrink-0 flex items-center">
             <Link href="/">
               <Image
                 src="/images/SIGERTRIP.png"

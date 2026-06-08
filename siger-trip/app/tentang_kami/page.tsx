@@ -119,7 +119,7 @@ export default function AboutPage() {
           {/* Tim Member 1 */}
           <div className="text-center group">
             <div className="relative mb-6 mx-auto w-48 h-48 rounded-lg overflow-hidden bg-slate-200 flex items-center justify-center shadow-md group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-105">
-              <div className="w-full h-full bg-gradient-to-br from-amber-300 to-amber-500 flex items-center justify-center">
+              <div className="w-full h-full bg-linear-to-br from-amber-300 to-amber-500 flex items-center justify-center">
                 <span className="text-6xl text-white font-bold">1</span>
               </div>
             </div>
@@ -138,7 +138,7 @@ export default function AboutPage() {
           {/* Tim Member 2 */}
           <div className="text-center group">
             <div className="relative mb-6 mx-auto w-48 h-48 rounded-lg overflow-hidden bg-slate-200 flex items-center justify-center shadow-md group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-105">
-              <div className="w-full h-full bg-gradient-to-br from-blue-300 to-blue-500 flex items-center justify-center">
+              <div className="w-full h-full bg-linear-to-br from-blue-300 to-blue-500 flex items-center justify-center">
                 <span className="text-6xl text-white font-bold">2</span>
               </div>
             </div>
@@ -157,7 +157,7 @@ export default function AboutPage() {
           {/* Tim Member 3 */}
           <div className="text-center group">
             <div className="relative mb-6 mx-auto w-48 h-48 rounded-lg overflow-hidden bg-slate-200 flex items-center justify-center shadow-md group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-105">
-              <div className="w-full h-full bg-gradient-to-br from-green-300 to-green-500 flex items-center justify-center">
+              <div className="w-full h-full bg-linear-to-br from-green-300 to-green-500 flex items-center justify-center">
                 <span className="text-6xl text-white font-bold">3</span>
               </div>
             </div>

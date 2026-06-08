@@ -162,7 +162,7 @@ export default function HomePage() {
             ].map((c) => (
               <article key={c.name} className="group bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-lg transition-shadow duration-300 hover:-translate-y-1 transform card-stack-mobile">
                 <div className="flex flex-col sm:flex-row items-start gap-4">
-                  <div className="flex-shrink-0">
+                  <div className="shrink-0">
                     <div className="h-14 w-14 rounded-full bg-gray-100 overflow-hidden flex items-center justify-center">
                       <Image src={c.avatar} alt={`${c.name} avatar`} width={56} height={56} className="object-cover" />
                     </div>
