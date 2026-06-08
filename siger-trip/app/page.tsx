@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import SorotanKuliner from "../components/SorotanKuliner";
 
 export default function HomePage() {
   return (
@@ -188,31 +189,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SOROTAN KULINER */}
-      <section id="kuliner" className="py-16 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4">
-          <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Sorotan Kuliner</h3>
-          <div className="grid gap-6 md:grid-cols-2">
-            {/* Gulai Taboh */}
-            <article className="rounded-lg bg-white border p-6 shadow-sm flex flex-col sm:flex-row gap-4 items-start card-stack-mobile">
-              <Image src="/images/Gulai%20Taboh%20Ikan%20khas%20Lampung%20home.webp" alt="Gulai Taboh" width={180} height={120} className="rounded-md object-cover" />
-              <div className="card-body">
-                <h4 className="card-title text-lg mb-2">Gulai Taboh Ikan</h4>
-                <p className="card-desc mb-2">Gulai Taboh berakar dari tradisi pesisir Lampung; kuah santan kaya rempah dibuat dengan bahan lokal dan ikan segar. Kepopulerannya datang dari rasa kuat rempah dan keterikatan pada budaya lokal yang diwariskan turun-temurun.</p>
-              </div>
-            </article>
-
-            {/* Seruit */}
-            <article className="rounded-lg bg-white border p-6 shadow-sm flex flex-col sm:flex-row gap-4 items-start card-stack-mobile">
-              <Image src="/images/seruit%20home.webp" alt="Seruit" width={180} height={120} className="rounded-md object-cover" />
-              <div className="card-body">
-                <h4 className="card-title text-lg mb-2">Seruit</h4>
-                <p className="card-desc mb-2">Seruit adalah olahan ikan asap yang populer di kalangan masyarakat Lampung. Asal-usulnya terkait kebiasaan pengawetan ikan di komunitas pesisir; popularitasnya meningkat karena cita rasa unik dan ketersediaannya di pasar lokal.</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
+      <SorotanKuliner />
 
       {/* SOROTAN DESTINASI ALAM */}
       <section id="alam" className="py-16 bg-white">
