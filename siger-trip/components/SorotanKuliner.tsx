@@ -17,7 +17,7 @@ export default function SorotanKuliner() {
       desc: 'Seruit adalah olahan ikan asap yang populer di kalangan masyarakat Lampung. Asal-usulnya terkait kebiasaan pengawetan ikan di komunitas pesisir; popularitasnya meningkat karena cita rasa unik dan ketersediaannya di pasar lokal.',
       img: '/images/seruit%20home.webp',
       alt: 'Seruit Lampung',
-      href: '/destinasi?filter=kuliner&item=seruit'
+      href: 'https://tribratanews.lampung.polri.go.id/detail-post/seruit-makanan-khas-lampung-yang-lezat-dan-penuh-tradisi'
     }
   ];
 
