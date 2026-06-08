@@ -110,9 +110,7 @@ export default function HomePage() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { title: 'Harga transparan dan kompetitif', image: '/images/Harga transparan dan kompetitif.webp', alt: 'Harga transparan dan kompetitif', useImage: true },
-              { title: 'Driver berpengalaman', icon: (
-                <svg className="h-8 w-8 text-amber-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12c0-4 4-7 9-7s9 3 9 7v5a1 1 0 01-1 1h-4v-3H8v3H4a1 1 0 01-1-1v-5z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/><circle cx="12" cy="8" r="2" stroke="currentColor" strokeWidth="1.6"/></svg>
-              )},
+              { title: 'Driver berpengalaman', image: '/images/driver berpengalaman home.webp', alt: 'Driver berpengalaman', useImage: true },
               { title: 'Kendaraan bersih dan nyaman', icon: (
                 <svg className="h-8 w-8 text-amber-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="7" width="20" height="10" rx="2" stroke="currentColor" strokeWidth="1.6"/><path d="M7 17v2M17 17v2" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/></svg>
               )},
