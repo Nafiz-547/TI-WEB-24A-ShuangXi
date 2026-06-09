@@ -388,103 +388,53 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-linear-to-b from-slate-100 to-slate-50 py-20">
-        <div className="mx-auto max-w-4xl px-6 sm:px-10 lg:px-16">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-semibold text-slate-900">Testimoni Traveler Kami</h2>
-            <p className="mt-4 text-lg text-slate-600">Cerita inspiratif dari wisatawan yang telah merasakan petualangan bersama SigerTrip</p>
+      <section className="bg-slate-50 py-20">
+        <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16">
+          <div className="text-center mb-14">
+            <p className="text-sm uppercase tracking-[0.32em] text-amber-500">Testimoni Traveler</p>
+            <h2 className="mt-4 text-4xl font-semibold text-slate-900">Pengalaman Mereka Bersama SigerTrip</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-600">Dengar langsung cerita traveler yang sudah menjelajah Lampung bersama kami. Tampilan ini dibuat lebih bersih, hangat, dan profesional.</p>
           </div>
 
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="rounded-2xl bg-white p-8 shadow-lg shadow-slate-900/5 border border-slate-200/50">
-              <div className="flex gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-amber-400 text-xl">★</span>
-                ))}
-              </div>
-              <p className="text-base leading-7 card-desc mb-6">
-                &apos;Perjalanan 7 hari bersama SigerTrip adalah yang terbaik! Guide kami sangat ramah, itinerari sempurna, dan kami bertemu banyak teman baru. Highly recommended!&apos;
-              </p>
-              <div className="border-t border-slate-200 pt-4">
-                <p className="card-title">Sarah Putri</p>
-                <p className="card-desc text-sm">Jakarta</p>
-              </div>
-            </div>
+          <div className="grid gap-8 xl:grid-cols-3 lg:grid-cols-2">
+            {[
+              {
+                name: "Sarah Putri",
+                city: "Jakarta",
+                text: "Perjalanan 7 hari bersama SigerTrip adalah yang terbaik! Guide kami sangat ramah, itinerari sempurna, dan kami bertemu banyak teman baru.",
+              },
+              {
+                name: "Ahmad Rizki",
+                city: "Bandung",
+                text: "Harga yang terjangkau namun kualitas layanan luar biasa. Destinasi yang dikunjungi tidak membosankan, semuanya tersembunyi dan indah.",
+              },
+              {
+                name: "Dewi Lestari",
+                city: "Surabaya",
+                text: "SigerTrip bukan hanya tentang wisata, tapi tentang belajar dan mengalami. Tim mereka benar-benar peduli dengan kepuasan kami.",
+              },
+            ].map((item, index) => (
+              <article key={item.name} className="rounded-[1.75rem] border border-slate-200/80 bg-white p-8 shadow-lg shadow-slate-900/5 transition hover:-translate-y-1 hover:shadow-2xl">
+                <div className="flex items-center justify-between gap-4 pb-5 border-b border-slate-200/80 mb-6">
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-3xl bg-amber-100 text-amber-600 font-semibold text-lg shadow-sm">{index + 1}</div>
+                    <div>
+                      <p className="text-lg font-semibold text-slate-900">{item.name}</p>
+                      <p className="text-sm text-slate-500">{item.city}</p>
+                    </div>
+                  </div>
+                  <span className="rounded-full bg-amber-50 px-3 py-1 text-xs uppercase tracking-[0.28em] text-amber-600">Traveler</span>
+                </div>
 
-            <div className="rounded-2xl bg-white p-8 shadow-lg shadow-slate-900/5 border border-slate-200/50">
-              <div className="flex gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-amber-400 text-xl">★</span>
-                ))}
-              </div>
-              <p className="text-base leading-7 card-desc mb-6">
-                &apos;Harga yang terjangkau namun kualitas layanan luar biasa. Destinasi yang dikunjungi tidak membosankan, semuanya tersembunyi dan indah. Pasti balik ke Lampung!&apos;
-              </p>
-              <div className="border-t border-slate-200 pt-4">
-                <p className="card-title">Ahmad Rizki</p>
-                <p className="card-desc text-sm">Bandung</p>
-              </div>
-            </div>
+                <div className="mb-6 flex gap-1 text-amber-400 text-xl">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i}>★</span>
+                  ))}
+                </div>
 
-            <div className="rounded-2xl bg-white p-8 shadow-lg shadow-slate-900/5 border border-slate-200/50">
-              <div className="flex gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-amber-400 text-xl">★</span>
-                ))}
-              </div>
-              <p className="text-base leading-7 card-desc mb-6">
-                &apos;SigerTrip bukan hanya tentang wisata, tapi tentang belajar dan mengalami. Tim mereka benar-benar peduli dengan kepuasan kami. Terima kasih SigerTrip!&apos;
-              </p>
-              <div className="border-t border-slate-200 pt-4">
-                <p className="card-title">Dewi Lestari</p>
-                <p className="card-desc text-sm">Surabaya</p>
-              </div>
-            </div>
-
-            <div className="rounded-2xl bg-white p-8 shadow-lg shadow-slate-900/5 border border-slate-200/50">
-              <div className="flex gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-amber-400 text-xl">★</span>
-                ))}
-              </div>
-              <p className="text-base leading-7 card-desc mb-6">
-                &apos;Saya traveling solo dan merasa 100% aman. Destinasi yang dipilih sangat unik, tidak seperti paket wisata biasanya. Benar-benar adventure yang autentik!&apos;
-              </p>
-              <div className="border-t border-slate-200 pt-4">
-                <p className="card-title">Budi Santoso</p>
-                <p className="card-desc text-sm">Yogyakarta</p>
-              </div>
-            </div>
-
-            <div className="rounded-2xl bg-white p-8 shadow-lg shadow-slate-900/5 border border-slate-200/50">
-              <div className="flex gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-amber-400 text-xl">★</span>
-                ))}
-              </div>
-              <p className="text-base leading-7 card-desc mb-6">
-                &apos;Keluarga kami sangat puas. Anak-anak belajar banyak tentang budaya Lampung, dan kami tenang karena semua sudah diatur dengan baik oleh SigerTrip.&apos;
-              </p>
-              <div className="border-t border-slate-200 pt-4">
-                <p className="card-title">Ibu Siti</p>
-                <p className="card-desc text-sm">Medan</p>
-              </div>
-            </div>
-
-            <div className="rounded-2xl bg-white p-8 shadow-lg shadow-slate-900/5 border border-slate-200/50">
-              <div className="flex gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-amber-400 text-xl">★</span>
-                ))}
-              </div>
-              <p className="text-base leading-7 card-desc mb-6">
-                &apos;Transparansi harga dan tidak ada hidden cost. Destinasi menarik, makanan lezat, dan guide yang berpengetahuan luas. Sangat worth it!&apos;
-              </p>
-              <div className="border-t border-slate-200 pt-4">
-                <p className="card-title">Rian Wijaya</p>
-                <p className="card-desc text-sm">Semarang</p>
-              </div>
-            </div>
+                <p className="text-slate-600 leading-8">&quot;{item.text}&quot;</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
