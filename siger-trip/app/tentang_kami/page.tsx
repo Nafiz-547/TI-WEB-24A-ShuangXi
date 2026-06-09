@@ -120,10 +120,12 @@ export default function AboutPage() {
 
         <div className="grid gap-8 lg:grid-cols-3">
           <div className="rounded-3xl bg-white p-8 shadow-lg border border-slate-200/80">
-            <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-amber-100 text-amber-500">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M12 2a2 2 0 0 0-2 2v1.07A7 7 0 0 0 5 12v5a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3v-5a7 7 0 0 0-5-6.93V4a2 2 0 0 0-2-2zM8 20a1 1 0 0 1-1-1v-4a6 6 0 0 1 12 0v4a1 1 0 0 1-1 1H8z" />
-              </svg>
+            <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-amber-100 text-amber-600 border border-amber-200">
+              <div className="flex items-center justify-center w-8 h-8 rounded-2xl bg-white/90">
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2a2 2 0 0 0-2 2v1.07A7 7 0 0 0 5 12v5a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3v-5a7 7 0 0 0-5-6.93V4a2 2 0 0 0-2-2zM8 20a1 1 0 0 1-1-1v-4a6 6 0 0 1 12 0v4a1 1 0 0 1-1 1H8z" />
+                </svg>
+              </div>
             </div>
             <h3 className="text-2xl font-semibold text-slate-900 mb-4">Paket Wisata Budaya</h3>
             <p className="text-slate-600 leading-7 mb-6">Jelajahi warisan budaya Lampung, candi, rumah adat, dan festival lokal dengan itinerari yang nyaman.</p>
@@ -133,10 +135,12 @@ export default function AboutPage() {
           </div>
 
           <div className="rounded-3xl bg-white p-8 shadow-lg border border-slate-200/80">
-            <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 text-blue-500">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M12 2l3 7h7l-5.5 4 2 7L12 17l-6.5 3 2-7L2 9h7z" />
-              </svg>
+            <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-amber-100 text-amber-600 border border-amber-200">
+              <div className="flex items-center justify-center w-8 h-8 rounded-2xl bg-white/90">
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2l3 7h7l-5.5 4 2 7L12 17l-6.5 3 2-7L2 9h7z" />
+                </svg>
+              </div>
             </div>
             <h3 className="text-2xl font-semibold text-slate-900 mb-4">Paket Petualangan</h3>
             <p className="text-slate-600 leading-7 mb-6">Rasakan trekking, snorkeling, dan perjalanan pantai eksklusif yang dirancang untuk penjelajah sejati.</p>
@@ -146,10 +150,12 @@ export default function AboutPage() {
           </div>
 
           <div className="rounded-3xl bg-white p-8 shadow-lg border border-slate-200/80">
-            <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-green-100 text-green-500">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-4 0-8 2-8 5v1h16v-1c0-3-4-5-8-5z" />
-              </svg>
+            <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-amber-100 text-amber-600 border border-amber-200">
+              <div className="flex items-center justify-center w-8 h-8 rounded-2xl bg-white/90">
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-4 0-8 2-8 5v1h16v-1c0-3-4-5-8-5z" />
+                </svg>
+              </div>
             </div>
             <h3 className="text-2xl font-semibold text-slate-900 mb-4">Paket Keluarga</h3>
             <p className="text-slate-600 leading-7 mb-6">Nikmati perjalanan ramah keluarga dengan aktivitas seru, penginapan nyaman, dan layanan ramah anak.</p>
@@ -197,10 +203,12 @@ export default function AboutPage() {
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           <div className="rounded-2xl bg-white p-8 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-            <div className="mb-4 inline-flex items-center justify-center w-14 h-14 rounded-full bg-amber-100 text-amber-600">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.22.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm11 0c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM5 11l1.5-4.5h11L19 11H5z" />
-              </svg>
+            <div className="mb-4 inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-amber-100 text-amber-600 border border-amber-200">
+              <div className="flex items-center justify-center w-10 h-10 rounded-2xl bg-white/90">
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.22.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm11 0c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM5 11l1.5-4.5h11L19 11H5z" />
+                </svg>
+              </div>
             </div>
             <h3 className="text-xl font-semibold text-slate-900 mb-3">Penjemputan dari Bakauheni</h3>
             <p className="text-slate-600 leading-7">
@@ -209,10 +217,12 @@ export default function AboutPage() {
           </div>
 
           <div className="rounded-2xl bg-white p-8 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-            <div className="mb-4 inline-flex items-center justify-center w-14 h-14 rounded-full bg-blue-100 text-blue-600">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M5 13c0 1.65.67 3.15 1.76 4.24L2.5 20.5c-.71.71-.71 1.86 0 2.57.71.71 1.86.71 2.57 0l4.26-4.26C11.85 20.33 13.35 21 15 21c5.52 0 10-4.48 10-10S20.52 1 15 1 5 5.48 5 11zm10-8c4.41 0 8 3.59 8 8s-3.59 8-8 8-8-3.59-8-8 3.59-8 8-8zm3.5 9c.83 0 1.5-.67 1.5-1.5S19.33 11 18.5 11 17 11.67 17 12.5s.67 1.5 1.5 1.5z" />
-              </svg>
+            <div className="mb-4 inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-amber-100 text-amber-600 border border-amber-200">
+              <div className="flex items-center justify-center w-10 h-10 rounded-2xl bg-white/90">
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M7 13h10V7h-2V5H9v2H7v6zm-1 0V7a2 2 0 0 1 2-2h2V3h6v2h2a2 2 0 0 1 2 2v6H6zm4 2h4v4H10v-4zm-5 2v-3h2v3H5zm14 0v-3h2v3h-2z" />
+                </svg>
+              </div>
             </div>
             <h3 className="text-xl font-semibold text-slate-900 mb-3">Penginapan Berkualitas</h3>
             <p className="text-slate-600 leading-7">
@@ -221,10 +231,14 @@ export default function AboutPage() {
           </div>
 
           <div className="rounded-2xl bg-white p-8 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-            <div className="mb-4 inline-flex items-center justify-center w-14 h-14 rounded-full bg-green-100 text-green-600">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M11.99 5V1h-1v4H8.01V1H7v4H4c-1.1 0-2 .9-2 2v3h2V7h13v3h2V7c0-1.1-.9-2-2-2h-3V1h-1v4zm8.23 7c-.58 0-1.05.47-1.05 1.05 0 .58.47 1.05 1.05 1.05.58 0 1.05-.47 1.05-1.05 0-.58-.47-1.05-1.05-1.05zm-7.52 0c-.58 0-1.05.47-1.05 1.05 0 .58.47 1.05 1.05 1.05.58 0 1.05-.47 1.05-1.05 0-.58-.47-1.05-1.05-1.05zM2 7h20v10c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V7z" />
-              </svg>
+            <div className="mb-4 inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-amber-100 text-amber-600 border border-amber-200">
+              <div className="flex items-center justify-center w-10 h-10 rounded-2xl bg-white/90">
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 3v18" />
+                  <path d="M8 19h8" />
+                  <path d="M11 13h2" />
+                </svg>
+              </div>
             </div>
             <h3 className="text-xl font-semibold text-slate-900 mb-3">Transportasi Selama Perjalanan</h3>
             <p className="text-slate-600 leading-7">
@@ -233,10 +247,12 @@ export default function AboutPage() {
           </div>
 
           <div className="rounded-2xl bg-white p-8 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-            <div className="mb-4 inline-flex items-center justify-center w-14 h-14 rounded-full bg-purple-100 text-purple-600">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z" />
-              </svg>
+            <div className="mb-4 inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-amber-100 text-amber-600 border border-amber-200">
+              <div className="flex items-center justify-center w-10 h-10 rounded-2xl bg-white/90">
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 12c2.761 0 5-2.239 5-5s-2.239-5-5-5-5 2.239-5 5 2.239 5 5 5zm-7 9c0-2.761 4.477-4 7-4s7 1.239 7 4v1H5v-1z" />
+                </svg>
+              </div>
             </div>
             <h3 className="text-xl font-semibold text-slate-900 mb-3">Guide Profesional & Ramah</h3>
             <p className="text-slate-600 leading-7">
@@ -245,10 +261,12 @@ export default function AboutPage() {
           </div>
 
           <div className="rounded-2xl bg-white p-8 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-            <div className="mb-4 inline-flex items-center justify-center w-14 h-14 rounded-full bg-orange-100 text-orange-600">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M11.99 5V1h-1v4H8.01V1H7v4H4c-1.1 0-2 .9-2 2v3h20V7c0-1.1-.9-2-2-2h-3V1h-1v4zm8.23 7c-.58 0-1.05.47-1.05 1.05 0 .58.47 1.05 1.05 1.05.58 0 1.05-.47 1.05-1.05 0-.58-.47-1.05-1.05-1.05zm-7.52 0c-.58 0-1.05.47-1.05 1.05 0 .58.47 1.05 1.05 1.05.58 0 1.05-.47 1.05-1.05 0-.58-.47-1.05-1.05-1.05zM2 7h20v10c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V7z" />
-              </svg>
+            <div className="mb-4 inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-amber-100 text-amber-600 border border-amber-200">
+              <div className="flex items-center justify-center w-10 h-10 rounded-2xl bg-white/90">
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M7 2h2v11H7V2zm4 0h2v11h-2V2zm-5 15h10v2H6v-2zm0-5h10v2H6v-2z" />
+                </svg>
+              </div>
             </div>
             <h3 className="text-xl font-semibold text-slate-900 mb-3">Makan & Minuman</h3>
             <p className="text-slate-600 leading-7">
@@ -257,10 +275,12 @@ export default function AboutPage() {
           </div>
 
           <div className="rounded-2xl bg-white p-8 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-            <div className="mb-4 inline-flex items-center justify-center w-14 h-14 rounded-full bg-red-100 text-red-600">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S15.33 8 14.5 8 13 8.67 13 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S8.33 8 7.5 8 6 8.67 6 9.5 6.67 11 7.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z" />
-              </svg>
+            <div className="mb-4 inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-amber-100 text-amber-600 border border-amber-200">
+              <div className="flex items-center justify-center w-10 h-10 rounded-2xl bg-white/90">
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2L4 5v6c0 5.25 3.75 9.74 8 11 4.25-1.26 8-5.75 8-11V5l-8-3zm1 13h-2v-2h2v2zm0-4h-2V7h2v4z" />
+                </svg>
+              </div>
             </div>
             <h3 className="text-xl font-semibold text-slate-900 mb-3">Asuransi Perjalanan</h3>
             <p className="text-slate-600 leading-7">
