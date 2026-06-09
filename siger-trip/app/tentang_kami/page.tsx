@@ -165,54 +165,35 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-      <section className="mx-auto max-w-6xl px-6 py-20 sm:px-10 lg:px-16 bg-white rounded-3xl shadow-sm border border-slate-200/80 mb-12">
+      <section className="mx-auto max-w-6xl px-6 py-20 sm:px-10 lg:px-16 bg-gradient-to-br from-amber-50 via-white to-slate-50 rounded-[2rem] shadow-lg shadow-slate-200/40 mb-12">
         <div className="text-center mb-12">
           <p className="text-sm uppercase tracking-[0.28em] text-amber-500">7-Day Summary</p>
-          <h2 className="mt-4 text-4xl font-semibold text-slate-900">Rekomendasi Destination Tiap Hari</h2>
-          <p className="mt-4 text-lg text-slate-600">Ringkas perjalanan 7 hari Anda di Lampung dengan tujuan terbaik setiap harinya.</p>
+          <h2 className="mt-4 text-4xl font-semibold text-slate-900">Ringkasan Perjalanan Lampung</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-600">Perjalanan 7 hari yang dirancang agar Anda mendapatkan pengalaman terbaik setiap harinya — mulai dari budaya hingga pantai dan petualangan alam.</p>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <div className="rounded-3xl border border-slate-200/80 bg-slate-50 p-6 shadow-sm">
-            <div className="flex h-12 w-12 items-center justify-center rounded-3xl bg-amber-100 text-amber-700 font-bold text-lg mb-4">1</div>
-            <h3 className="text-xl font-semibold text-slate-900 mb-2">Hari 1: Sambutan Bandar Lampung</h3>
-            <p className="text-slate-600 leading-7">Tiba di Lampung, check-in hotel, dan nikmati city tour ringan beserta kuliner lokal khas malam pertama.</p>
-          </div>
-
-          <div className="rounded-3xl border border-slate-200/80 bg-slate-50 p-6 shadow-sm">
-            <div className="flex h-12 w-12 items-center justify-center rounded-3xl bg-amber-100 text-amber-700 font-bold text-lg mb-4">2</div>
-            <h3 className="text-xl font-semibold text-slate-900 mb-2">Hari 2: Pantai Mutun & Snorkeling</h3>
-            <p className="text-slate-600 leading-7">Kunjungi pantai indah, bebas berenang, dan coba pengalaman snorkeling di perairan jernih Lampung.</p>
-          </div>
-
-          <div className="rounded-3xl border border-slate-200/80 bg-slate-50 p-6 shadow-sm">
-            <div className="flex h-12 w-12 items-center justify-center rounded-3xl bg-amber-100 text-amber-700 font-bold text-lg mb-4">3</div>
-            <h3 className="text-xl font-semibold text-slate-900 mb-2">Hari 3: Budaya & Desa Adat</h3>
-            <p className="text-slate-600 leading-7">Jelajahi tradisi Lampung dengan kunjungan ke desa adat, rumah bentu, dan atraksi budaya lokal.</p>
-          </div>
-
-          <div className="rounded-3xl border border-slate-200/80 bg-slate-50 p-6 shadow-sm">
-            <div className="flex h-12 w-12 items-center justify-center rounded-3xl bg-amber-100 text-amber-700 font-bold text-lg mb-4">4</div>
-            <h3 className="text-xl font-semibold text-slate-900 mb-2">Hari 4: Menyusuri Pulau Pahawang</h3>
-            <p className="text-slate-600 leading-7">Pergi ke pulau eksotik, snorkeling, dan menikmati pantai pasir putih yang tenang.</p>
-          </div>
-
-          <div className="rounded-3xl border border-slate-200/80 bg-slate-50 p-6 shadow-sm">
-            <div className="flex h-12 w-12 items-center justify-center rounded-3xl bg-amber-100 text-amber-700 font-bold text-lg mb-4">5</div>
-            <h3 className="text-xl font-semibold text-slate-900 mb-2">Hari 5: River Tubing & Pasar Lokal</h3>
-            <p className="text-slate-600 leading-7">Rasakan serunya tubing di sungai dan jelajahi pasar tradisional untuk oleh-oleh khas Lampung.</p>
-          </div>
-
-          <div className="rounded-3xl border border-slate-200/80 bg-slate-50 p-6 shadow-sm">
-            <div className="flex h-12 w-12 items-center justify-center rounded-3xl bg-amber-100 text-amber-700 font-bold text-lg mb-4">6</div>
-            <h3 className="text-xl font-semibold text-slate-900 mb-2">Hari 6: Teluk Kiluan & Lumba-lumba</h3>
-            <p className="text-slate-600 leading-7">Nikmati pemandangan teluk, berburu lumba-lumba, dan menyaksikan sunset cantik di pesisir.</p>
-          </div>
-
-          <div className="rounded-3xl border border-slate-200/80 bg-slate-50 p-6 shadow-sm">
-            <div className="flex h-12 w-12 items-center justify-center rounded-3xl bg-amber-100 text-amber-700 font-bold text-lg mb-4">7</div>
-            <h3 className="text-xl font-semibold text-slate-900 mb-2">Hari 7: Santai & Pulang</h3>
-            <p className="text-slate-600 leading-7">Waktu santai di pagi hari untuk belanja oleh-oleh sebelum kembali menuju pelabuhan atau bandara.</p>
+        <div className="relative">
+          <div className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-amber-200 lg:block" />
+          <div className="grid gap-6 lg:grid-cols-2">
+            {[
+              { day: 1, title: "Sambutan Bandar Lampung", desc: "Tiba, check-in hotel, dan nikmati city tour ringan serta kuliner lokal malam pertama." },
+              { day: 2, title: "Pantai Mutun & Snorkeling", desc: "Pantai indah, berenang bebas, dan snorkeling di perairan jernih Lampung." },
+              { day: 3, title: "Budaya & Desa Adat", desc: "Kunjungi desa adat, rumah bentu, dan saksikan atraksi budaya Lampung." },
+              { day: 4, title: "Pulau Pahawang", desc: "Eksplorasi pulau eksotik dengan snorkeling dan santai di pantai pasir putih." },
+              { day: 5, title: "River Tubing & Pasar Lokal", desc: "Seru-seruan tubing di sungai dan berbelanja oleh-oleh khas Lampung." },
+              { day: 6, title: "Teluk Kiluan & Lumba-lumba", desc: "Berburu lumba-lumba, menikmati pemandangan teluk, dan sunset di pesisir." },
+              { day: 7, title: "Santai & Pulang", desc: "Waktu santai, belanja oleh-oleh, dan perjalanan pulang dengan kenangan penuh." },
+            ].map((item, index) => (
+              <article key={item.day} className="relative rounded-[1.75rem] border border-slate-200/80 bg-white/90 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+                <div className={`absolute left-0 top-8 hidden h-2 w-8 rounded-full bg-amber-200 lg:block ${index % 2 === 0 ? "translate-x-[-50%]" : "translate-x-[calc(50%+100%)]"}`} />
+                <div className="flex items-center justify-between gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-3xl bg-amber-100 text-amber-700 font-semibold text-lg shadow-sm">{item.day}</div>
+                  <span className="rounded-full bg-amber-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-amber-700">Day {item.day}</span>
+                </div>
+                <h3 className="mt-6 text-xl font-semibold text-slate-900">{item.title}</h3>
+                <p className="mt-3 text-slate-600 leading-7">{item.desc}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
