@@ -165,6 +165,57 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      <section className="mx-auto max-w-6xl px-6 py-20 sm:px-10 lg:px-16 bg-white rounded-3xl shadow-sm border border-slate-200/80 mb-12">
+        <div className="text-center mb-12">
+          <p className="text-sm uppercase tracking-[0.28em] text-amber-500">7-Day Summary</p>
+          <h2 className="mt-4 text-4xl font-semibold text-slate-900">Rekomendasi Destination Tiap Hari</h2>
+          <p className="mt-4 text-lg text-slate-600">Ringkas perjalanan 7 hari Anda di Lampung dengan tujuan terbaik setiap harinya.</p>
+        </div>
+
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="rounded-3xl border border-slate-200/80 bg-slate-50 p-6 shadow-sm">
+            <div className="flex h-12 w-12 items-center justify-center rounded-3xl bg-amber-100 text-amber-700 font-bold text-lg mb-4">1</div>
+            <h3 className="text-xl font-semibold text-slate-900 mb-2">Hari 1: Sambutan Bandar Lampung</h3>
+            <p className="text-slate-600 leading-7">Tiba di Lampung, check-in hotel, dan nikmati city tour ringan beserta kuliner lokal khas malam pertama.</p>
+          </div>
+
+          <div className="rounded-3xl border border-slate-200/80 bg-slate-50 p-6 shadow-sm">
+            <div className="flex h-12 w-12 items-center justify-center rounded-3xl bg-amber-100 text-amber-700 font-bold text-lg mb-4">2</div>
+            <h3 className="text-xl font-semibold text-slate-900 mb-2">Hari 2: Pantai Mutun & Snorkeling</h3>
+            <p className="text-slate-600 leading-7">Kunjungi pantai indah, bebas berenang, dan coba pengalaman snorkeling di perairan jernih Lampung.</p>
+          </div>
+
+          <div className="rounded-3xl border border-slate-200/80 bg-slate-50 p-6 shadow-sm">
+            <div className="flex h-12 w-12 items-center justify-center rounded-3xl bg-amber-100 text-amber-700 font-bold text-lg mb-4">3</div>
+            <h3 className="text-xl font-semibold text-slate-900 mb-2">Hari 3: Budaya & Desa Adat</h3>
+            <p className="text-slate-600 leading-7">Jelajahi tradisi Lampung dengan kunjungan ke desa adat, rumah bentu, dan atraksi budaya lokal.</p>
+          </div>
+
+          <div className="rounded-3xl border border-slate-200/80 bg-slate-50 p-6 shadow-sm">
+            <div className="flex h-12 w-12 items-center justify-center rounded-3xl bg-amber-100 text-amber-700 font-bold text-lg mb-4">4</div>
+            <h3 className="text-xl font-semibold text-slate-900 mb-2">Hari 4: Menyusuri Pulau Pahawang</h3>
+            <p className="text-slate-600 leading-7">Pergi ke pulau eksotik, snorkeling, dan menikmati pantai pasir putih yang tenang.</p>
+          </div>
+
+          <div className="rounded-3xl border border-slate-200/80 bg-slate-50 p-6 shadow-sm">
+            <div className="flex h-12 w-12 items-center justify-center rounded-3xl bg-amber-100 text-amber-700 font-bold text-lg mb-4">5</div>
+            <h3 className="text-xl font-semibold text-slate-900 mb-2">Hari 5: River Tubing & Pasar Lokal</h3>
+            <p className="text-slate-600 leading-7">Rasakan serunya tubing di sungai dan jelajahi pasar tradisional untuk oleh-oleh khas Lampung.</p>
+          </div>
+
+          <div className="rounded-3xl border border-slate-200/80 bg-slate-50 p-6 shadow-sm">
+            <div className="flex h-12 w-12 items-center justify-center rounded-3xl bg-amber-100 text-amber-700 font-bold text-lg mb-4">6</div>
+            <h3 className="text-xl font-semibold text-slate-900 mb-2">Hari 6: Teluk Kiluan & Lumba-lumba</h3>
+            <p className="text-slate-600 leading-7">Nikmati pemandangan teluk, berburu lumba-lumba, dan menyaksikan sunset cantik di pesisir.</p>
+          </div>
+
+          <div className="rounded-3xl border border-slate-200/80 bg-slate-50 p-6 shadow-sm">
+            <div className="flex h-12 w-12 items-center justify-center rounded-3xl bg-amber-100 text-amber-700 font-bold text-lg mb-4">7</div>
+            <h3 className="text-xl font-semibold text-slate-900 mb-2">Hari 7: Santai & Pulang</h3>
+            <p className="text-slate-600 leading-7">Waktu santai di pagi hari untuk belanja oleh-oleh sebelum kembali menuju pelabuhan atau bandara.</p>
+          </div>
+        </div>
+      </section>
       <section className="mx-auto max-w-6xl px-6 py-16 sm:px-10 lg:px-16">
         <div className="text-center mb-8">
           <h2 className="text-3xl font-semibold text-slate-900">FAQ Singkat</h2>
