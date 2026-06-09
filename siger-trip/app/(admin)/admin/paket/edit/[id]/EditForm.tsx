@@ -15,7 +15,11 @@ interface PackageData {
   image: string;
 }
 
-export default function EditPackageForm({ initialData }: { initialData: PackageData }) {
+export default function EditPackageForm({
+  initialData,
+}: {
+  initialData: PackageData;
+}) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -45,8 +49,9 @@ export default function EditPackageForm({ initialData }: { initialData: PackageD
         });
 
         const uploadData = await uploadResponse.json();
-        if (!uploadResponse.ok) throw new Error(uploadData.error || "Gagal mengunggah gambar.");
-        
+        if (!uploadResponse.ok)
+          throw new Error(uploadData.error || "Gagal mengunggah gambar.");
+
         imagePath = uploadData.filePath;
       }
 
@@ -65,12 +70,14 @@ export default function EditPackageForm({ initialData }: { initialData: PackageD
       });
 
       const data = await response.json();
-      if (!response.ok) throw new Error(data.error || "Gagal memperbarui paket.");
+      if (!response.ok)
+        throw new Error(data.error || "Gagal memperbarui paket.");
 
       router.push("/admin/paket");
       router.refresh();
     } catch (err: unknown) {
-      const msg = err instanceof Error ? err.message : "Terjadi kesalahan sistem.";
+      const msg =
+        err instanceof Error ? err.message : "Terjadi kesalahan sistem.";
       setError(msg);
     } finally {
       setLoading(false);
@@ -87,7 +94,12 @@ export default function EditPackageForm({ initialData }: { initialData: PackageD
 
       <form onSubmit={handleSubmit} className="space-y-5">
         <div className="flex flex-col gap-1.5">
-          <label htmlFor="edit-title" className="text-xs font-bold text-slate-500 uppercase tracking-wider">Nama Paket Wisata</label>
+          <label
+            htmlFor="edit-title"
+            className="text-xs font-bold text-slate-500 uppercase tracking-wider"
+          >
+            Nama Paket Wisata
+          </label>
           <input
             id="edit-title"
             type="text"
@@ -101,7 +113,12 @@ export default function EditPackageForm({ initialData }: { initialData: PackageD
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div className="flex flex-col gap-1.5">
-            <label htmlFor="edit-category" className="text-xs font-bold text-slate-500 uppercase tracking-wider">Kategori Paket</label>
+            <label
+              htmlFor="edit-category"
+              className="text-xs font-bold text-slate-500 uppercase tracking-wider"
+            >
+              Kategori Paket
+            </label>
             <select
               id="edit-category"
               title="Kategori Paket"
@@ -116,7 +133,12 @@ export default function EditPackageForm({ initialData }: { initialData: PackageD
           </div>
 
           <div className="flex flex-col gap-1.5">
-            <label htmlFor="edit-duration" className="text-xs font-bold text-slate-500 uppercase tracking-wider">Durasi Tur (Hari)</label>
+            <label
+              htmlFor="edit-duration"
+              className="text-xs font-bold text-slate-500 uppercase tracking-wider"
+            >
+              Durasi Tur (Hari)
+            </label>
             <input
               id="edit-duration"
               type="number"
@@ -131,7 +153,12 @@ export default function EditPackageForm({ initialData }: { initialData: PackageD
         </div>
 
         <div className="flex flex-col gap-1.5">
-          <label htmlFor="edit-price" className="text-xs font-bold text-slate-500 uppercase tracking-wider">Harga Mulai Dari</label>
+          <label
+            htmlFor="edit-price"
+            className="text-xs font-bold text-slate-500 uppercase tracking-wider"
+          >
+            Harga Mulai Dari
+          </label>
           <input
             id="edit-price"
             type="text"
@@ -144,7 +171,12 @@ export default function EditPackageForm({ initialData }: { initialData: PackageD
         </div>
 
         <div className="flex flex-col gap-1.5">
-          <label htmlFor="edit-desc" className="text-xs font-bold text-slate-500 uppercase tracking-wider">Deskripsi Singkat Paket</label>
+          <label
+            htmlFor="edit-desc"
+            className="text-xs font-bold text-slate-500 uppercase tracking-wider"
+          >
+            Deskripsi Singkat Paket
+          </label>
           <textarea
             id="edit-desc"
             rows={4}
@@ -157,18 +189,26 @@ export default function EditPackageForm({ initialData }: { initialData: PackageD
         </div>
 
         <div className="flex flex-col gap-1.5 p-4 rounded-xl border border-dashed border-slate-200 bg-slate-50/40">
-          <label htmlFor="edit-file" className="text-xs font-bold text-slate-500 uppercase tracking-wider">Ganti Banner Gambar (Opsional)</label>
+          <label
+            htmlFor="edit-file"
+            className="text-xs font-bold text-slate-500 uppercase tracking-wider"
+          >
+            Ganti Banner Gambar (Opsional)
+          </label>
           <input
             id="edit-file"
             type="file"
             accept="image/*"
             title="Ganti Gambar Banner"
             onChange={(e) => {
-              if (e.target.files && e.target.files[0]) setFile(e.target.files[0]);
+              if (e.target.files && e.target.files[0])
+                setFile(e.target.files[0]);
             }}
             className="w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-orange-50 file:text-[#f78232] hover:file:bg-orange-100 mt-1 cursor-pointer"
           />
-          <p className="text-[10px] text-slate-400 mt-1">Kosongkan jika tidak ingin mengubah banner gambar lama.</p>
+          <p className="text-[10px] text-slate-400 mt-1">
+            Kosongkan jika tidak ingin mengubah banner gambar lama.
+          </p>
         </div>
 
         <div className="pt-4 flex items-center justify-end gap-3 border-t border-slate-100">

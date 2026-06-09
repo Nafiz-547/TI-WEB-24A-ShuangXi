@@ -19,17 +19,25 @@ interface RuteFormProps {
   } | null;
 }
 
-export default function RuteForm({ packageId, totalDays, editData }: RuteFormProps) {
+export default function RuteForm({
+  packageId,
+  totalDays,
+  editData,
+}: RuteFormProps) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
   // Mengisi state awal secara kondisional (Jika editData ada, gunakan datanya)
   const [name, setName] = useState(editData ? editData.name : "");
-  const [category, setCategory] = useState(editData ? editData.category : "Wisata");
+  const [category, setCategory] = useState(
+    editData ? editData.category : "Wisata",
+  );
   const [day, setDay] = useState(editData ? editData.day.toString() : "1");
   const [location, setLocation] = useState(editData ? editData.location : "");
-  const [description, setDescription] = useState(editData ? editData.description : "");
+  const [description, setDescription] = useState(
+    editData ? editData.description : "",
+  );
   const [price, setPrice] = useState(editData ? editData.price : "");
   const [file, setFile] = useState<File | null>(null);
 
@@ -52,16 +60,35 @@ export default function RuteForm({ packageId, totalDays, editData }: RuteFormPro
         });
 
         const uploadData = await uploadResponse.json();
-        if (!uploadResponse.ok) throw new Error(uploadData.error || "Gagal upload gambar.");
+        if (!uploadResponse.ok)
+          throw new Error(uploadData.error || "Gagal upload gambar.");
         imagePath = uploadData.filePath;
       }
 
       // Tentukan metode API & Body data berdasarkan mode (Edit / Tambah)
       const url = "/api/destinasi";
       const method = editData ? "PUT" : "POST";
-      const payload = editData 
-        ? { id: editData.id, name, category, day, location, description, image: imagePath, price }
-        : { packageId, name, category, day, location, description, image: imagePath, price };
+      const payload = editData
+        ? {
+            id: editData.id,
+            name,
+            category,
+            day,
+            location,
+            description,
+            image: imagePath,
+            price,
+          }
+        : {
+            packageId,
+            name,
+            category,
+            day,
+            location,
+            description,
+            image: imagePath,
+            price,
+          };
 
       const response = await fetch(url, {
         method,
@@ -70,7 +97,8 @@ export default function RuteForm({ packageId, totalDays, editData }: RuteFormPro
       });
 
       const data = await response.json();
-      if (!response.ok) throw new Error(data.error || "Gagal memproses data rute.");
+      if (!response.ok)
+        throw new Error(data.error || "Gagal memproses data rute.");
 
       if (editData) {
         // Jika sukses mengedit, bersihkan URL query parameter agar kembali ke mode tambah
@@ -83,7 +111,7 @@ export default function RuteForm({ packageId, totalDays, editData }: RuteFormPro
         setPrice("");
         setFile(null);
       }
-      
+
       router.refresh();
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : "Terjadi kesalahan.";
@@ -102,7 +130,12 @@ export default function RuteForm({ packageId, totalDays, editData }: RuteFormPro
       )}
 
       <div className="flex flex-col gap-1">
-        <label htmlFor="dest-name" className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Nama Lokasi / Aktivitas</label>
+        <label
+          htmlFor="dest-name"
+          className="text-[10px] font-bold text-slate-400 uppercase tracking-wider"
+        >
+          Nama Lokasi / Aktivitas
+        </label>
         <input
           id="dest-name"
           type="text"
@@ -116,7 +149,12 @@ export default function RuteForm({ packageId, totalDays, editData }: RuteFormPro
 
       <div className="grid grid-cols-2 gap-3">
         <div className="flex flex-col gap-1">
-          <label htmlFor="dest-category" className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Kategori</label>
+          <label
+            htmlFor="dest-category"
+            className="text-[10px] font-bold text-slate-400 uppercase tracking-wider"
+          >
+            Kategori
+          </label>
           <select
             id="dest-category"
             title="Kategori"
@@ -131,7 +169,12 @@ export default function RuteForm({ packageId, totalDays, editData }: RuteFormPro
         </div>
 
         <div className="flex flex-col gap-1">
-          <label htmlFor="dest-day" className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Hari Ke-</label>
+          <label
+            htmlFor="dest-day"
+            className="text-[10px] font-bold text-slate-400 uppercase tracking-wider"
+          >
+            Hari Ke-
+          </label>
           <select
             id="dest-day"
             title="Pilih Hari"
@@ -140,14 +183,21 @@ export default function RuteForm({ packageId, totalDays, editData }: RuteFormPro
             className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-xs font-semibold text-slate-700 focus:outline-none focus:border-[#f78232] bg-slate-50/50"
           >
             {Array.from({ length: totalDays }, (_, i) => i + 1).map((d) => (
-              <option key={d} value={d}>Hari {d}</option>
+              <option key={d} value={d}>
+                Hari {d}
+              </option>
             ))}
           </select>
         </div>
       </div>
 
       <div className="flex flex-col gap-1">
-        <label htmlFor="dest-location" className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Alamat / Wilayah</label>
+        <label
+          htmlFor="dest-location"
+          className="text-[10px] font-bold text-slate-400 uppercase tracking-wider"
+        >
+          Alamat / Wilayah
+        </label>
         <input
           id="dest-location"
           type="text"
@@ -160,7 +210,12 @@ export default function RuteForm({ packageId, totalDays, editData }: RuteFormPro
       </div>
 
       <div className="flex flex-col gap-1">
-        <label htmlFor="dest-price" className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Estimasi Biaya Mandiri</label>
+        <label
+          htmlFor="dest-price"
+          className="text-[10px] font-bold text-slate-400 uppercase tracking-wider"
+        >
+          Estimasi Biaya Mandiri
+        </label>
         <input
           id="dest-price"
           type="text"
@@ -173,7 +228,12 @@ export default function RuteForm({ packageId, totalDays, editData }: RuteFormPro
       </div>
 
       <div className="flex flex-col gap-1">
-        <label htmlFor="dest-desc" className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Agenda Kegiatan</label>
+        <label
+          htmlFor="dest-desc"
+          className="text-[10px] font-bold text-slate-400 uppercase tracking-wider"
+        >
+          Agenda Kegiatan
+        </label>
         <textarea
           id="dest-desc"
           rows={3}
@@ -186,7 +246,12 @@ export default function RuteForm({ packageId, totalDays, editData }: RuteFormPro
       </div>
 
       <div className="flex flex-col gap-1">
-        <label htmlFor="dest-file" className="text-[10px] font-bold text-slate-400 tracking-wider uppercase">Foto Lokasi (Opsional jika edit)</label>
+        <label
+          htmlFor="dest-file"
+          className="text-[10px] font-bold text-slate-400 tracking-wider uppercase"
+        >
+          Foto Lokasi (Opsional jika edit)
+        </label>
         <input
           id="dest-file"
           type="file"
@@ -213,7 +278,11 @@ export default function RuteForm({ packageId, totalDays, editData }: RuteFormPro
           disabled={loading}
           className={`font-bold text-xs py-3 rounded-xl active:scale-[0.98] transition-all disabled:opacity-50 shadow-sm ${editData ? "w-2/3 bg-blue-600 text-white hover:bg-blue-700 shadow-blue-500/10" : "w-full bg-[#f78232] text-white hover:bg-orange-600 shadow-orange-500/10"}`}
         >
-          {loading ? "⌛ Memproses..." : editData ? "💾 Simpan Perubahan" : "💾 Tambah ke Linimasa"}
+          {loading
+            ? "⌛ Memproses..."
+            : editData
+              ? "💾 Simpan Perubahan"
+              : "💾 Tambah ke Linimasa"}
         </button>
       </div>
     </form>
