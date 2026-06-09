@@ -21,7 +21,8 @@ export default async function AdminPaketPage() {
             Katalog Paket Wisata
           </h1>
           <p className="text-xs text-slate-500 mt-1">
-            Modul pengisian, pembaruan, dan penghapusan data paket perjalanan SigerTrip.
+            Modul pengisian, pembaruan, dan penghapusan data paket perjalanan
+            SigerTrip.
           </p>
         </div>
         <Link
@@ -56,24 +57,37 @@ export default async function AdminPaketPage() {
                   <th className="py-3 px-6">Nama Paket</th>
                   <th className="py-3 px-6 w-32">Durasi</th>
                   <th className="py-3 px-6 w-32">Harga Base</th>
-                  <th className="py-3 px-6 w-44 text-center">Aksi Operasional</th>
+                  <th className="py-3 px-6 w-44 text-center">
+                    Aksi Operasional
+                  </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100 text-xs text-slate-700">
                 {travelPackages.map((pkg) => (
-                  <tr key={pkg.id} className="hover:bg-slate-50/30 transition-colors">
+                  <tr
+                    key={pkg.id}
+                    className="hover:bg-slate-50/30 transition-colors"
+                  >
                     <td className="py-3.5 px-6">
-                      <span className={`inline-block px-2 py-0.5 rounded text-[9px] font-bold uppercase tracking-wide ${
-                        pkg.category === "Kuliner" ? "bg-amber-50 text-amber-700 border border-amber-200" :
-                        pkg.category === "Alam" ? "bg-emerald-50 text-emerald-700 border border-emerald-200" :
-                        "bg-blue-50 text-blue-700 border border-blue-200"
-                      }`}>
+                      <span
+                        className={`inline-block px-2 py-0.5 rounded text-[9px] font-bold uppercase tracking-wide ${
+                          pkg.category === "Kuliner"
+                            ? "bg-amber-50 text-amber-700 border border-amber-200"
+                            : pkg.category === "Alam"
+                              ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
+                              : "bg-blue-50 text-blue-700 border border-blue-200"
+                        }`}
+                      >
                         {pkg.category}
                       </span>
                     </td>
                     <td className="py-3.5 px-6">
-                      <div className="font-bold text-slate-900 text-sm">{pkg.title}</div>
-                      <div className="text-[10px] text-slate-400 font-mono mt-0.5">{pkg.id}</div>
+                      <div className="font-bold text-slate-900 text-sm">
+                        {pkg.title}
+                      </div>
+                      <div className="text-[10px] text-slate-400 font-mono mt-0.5">
+                        {pkg.id}
+                      </div>
                     </td>
                     <td className="py-3.5 px-6 font-semibold text-slate-600">
                       ⏳ {pkg.duration} Hari
@@ -99,7 +113,10 @@ export default async function AdminPaketPage() {
                         >
                           ✏️ Edit
                         </Link>
-                        <DeleteButton packageId={pkg.id} packageTitle={pkg.title} />
+                        <DeleteButton
+                          packageId={pkg.id}
+                          packageTitle={pkg.title}
+                        />
                       </div>
                     </td>
                   </tr>
