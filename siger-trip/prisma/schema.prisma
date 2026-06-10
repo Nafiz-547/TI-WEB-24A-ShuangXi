@@ -24,15 +24,16 @@ model Package {
 // 2. MODEL TIMELINE: Titik Pemberhentian Aktivitas Harian
 model Destination {
   id          String   @id @default(cuid())
-  packageId   String   // Foreign Key penghubung ke Package
+  name        String
+  category    String
+  day         Int
+  location    String
+  description String
+  image       String?
+  price       String
+  sortOrder   Int      @default(0) // ➕ Tambahkan baris ini untuk menyimpan indeks posisi
+  packageId   String
   package     Package  @relation(fields: [packageId], references: [id], onDelete: Cascade)
-  name        String   // Nama Tempat (Bisa pantai, restoran, atau hotel)
-  category    String   // PENTING: Diisi "Wisata", "Kuliner", atau "Penginapan"
-  day         Int      // Hari ke-berapa aktivitas ini dilakukan (1, 2, 3, dst)
-  location    String   // Alamat titik lokasi
-  description String   @db.Text
-  image       String   // Foto lokasi
-  price       String   // Estimasi biaya (Tiket masuk / Harga makan / Tarif hotel)
   createdAt   DateTime @default(now())
-  updatedAt   DateTime @default(now()) @updatedAt
+  updatedAt   DateTime @updatedAt
 }
