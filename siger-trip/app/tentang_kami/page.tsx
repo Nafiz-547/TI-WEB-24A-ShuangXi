@@ -19,8 +19,8 @@ export default function AboutPage() {
             Tentang Kami
           </span>
           <h1 className="mt-8 max-w-4xl text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-            <span className="block">SigerTrip:</span>
-            <span className="block bg-linear-to-r from-amber-300 via-amber-200 to-amber-300 bg-clip-text text-transparent">Gerbang Petualangan Lampung</span>
+            <span className="block">SigerTrip</span>
+            <span className="mt-3 block bg-gradient-to-r from-amber-300 via-amber-200 to-amber-300 bg-clip-text text-transparent">Gerbang Petualangan Lampung</span>
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200 sm:text-xl">
             Paket 7 hari nyaman dan terjangkau untuk menjelajahi Lampung.
