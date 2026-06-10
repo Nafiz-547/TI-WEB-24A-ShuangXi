@@ -24,7 +24,7 @@ export default async function AdminManagementRutePage({
     include: {
       // CARI BARIS INI DI FILE page.tsx KELOLA RUTE:
       destinations: {
-        orderBy: [{ day: "asc" }, { sortOrder: "asc" }, { createdAt: "asc" }], 
+        orderBy: [{ day: "asc" }, { sortOrder: "asc" }, { createdAt: "asc" }],
       },
     },
   });
@@ -139,6 +139,52 @@ export default async function AdminManagementRutePage({
             totalDays={travelPackage.duration}
             editData={editData}
           />
+        </div>
+
+        {/* TOMBOL AKSI RUTE */}
+        <div className="flex items-center gap-1 bg-white border border-slate-200/60 p-1 rounded-lg shadow-sm">
+          {/* TOMBOL GESER ATAS */}
+          <button
+            onClick={async () => {
+              await fetch("/api/destinasi/reorder", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ id: dest.id, direction: "up" }),
+              });
+              window.location.reload();
+            }}
+            className="p-1 text-[10px] hover:bg-slate-100 rounded transition-colors"
+            title="Naikkan Urutan"
+          >
+            ▲
+          </button>
+
+          {/* TOMBOL GESER BAWAH */}
+          <button
+            onClick={async () => {
+              await fetch("/api/destinasi/reorder", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ id: dest.id, direction: "down" }),
+              });
+              window.location.reload();
+            }}
+            className="p-1 text-[10px] hover:bg-slate-100 rounded transition-colors"
+            title="Turunkan Urutan"
+          >
+            ▼
+          </button>
+
+          <span className="text-slate-200 px-0.5">|</span>
+
+          <Link
+            href={`/admin/paket/${id}/rute?edit=${dest.id}`}
+            className="p-1.5 text-xs hover:bg-slate-100 rounded transition-colors"
+            title="Edit entri data"
+          >
+            ✏️
+          </Link>
+          <DeleteRuteButton id={dest.id} name={dest.name} />
         </div>
       </div>
     </div>
