@@ -15,15 +15,15 @@ export default function AboutPage() {
         />
         <div className="absolute inset-0 bg-slate-900/70" />
         <div className="relative mx-auto flex max-w-6xl flex-col items-center justify-center px-6 py-24 sm:px-10 lg:px-16 text-center">
-          <span aria-label="Tentang Kami" className="inline-flex items-center rounded-full bg-amber-400/80 backdrop-blur-sm px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.24em] text-slate-900 ring-1 ring-amber-300/40">
+          <span className="inline-flex rounded-full bg-amber-400/10 px-4 py-2 text-sm font-semibold uppercase tracking-[0.24em] text-amber-300 ring-1 ring-amber-300/20">
             Tentang Kami
           </span>
           <h1 className="mt-8 max-w-4xl text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-            <span className="block">SigerTrip</span>
-            <span className="mt-3 block bg-gradient-to-r from-amber-300 via-amber-200 to-amber-300 bg-clip-text text-transparent">Gerbang Petualangan Lampung</span>
+            <span className="block">SigerTrip:</span>
+            <span className="block bg-linear-to-r from-amber-300 via-amber-200 to-amber-300 bg-clip-text text-transparent">Gerbang Petualangan Lampung</span>
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200 sm:text-xl">
-            Paket 7 hari nyaman dan terjangkau untuk menjelajahi Lampung.
+            Kami merancang pengalaman liburan 7 hari yang nyaman, terjangkau, dan penuh kisah. Dari budaya Bandar Lampung sampai pesona laut selatan, SigerTrip membantu Anda menjelajahi Lampung dengan percaya diri.
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <Link href="/" className="inline-flex items-center justify-center rounded-full bg-amber-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-amber-300">
