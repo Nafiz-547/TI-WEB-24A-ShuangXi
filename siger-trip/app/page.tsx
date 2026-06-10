@@ -157,7 +157,7 @@ export default function HomePage() {
               { name: 'Andi Putra', city: 'Bandar Lampung', rating: 5, review: 'Perjalanan lancar, driver sangat profesional. Rekomendasi!', avatar: '/images/Andi Putra.webp' },
               { name: 'Sari Dewi', city: 'Metro', rating: 5, review: 'Itinerary pas dan fleksibel, anak-anak juga senang.', avatar: '/images/Sari Dewi.webp' },
               { name: 'Budi Susilo', city: 'Lampung Selatan', rating: 4, review: 'Kendaraan bersih dan nyaman, layanan cepat tanggap.', avatar: '/images/Budi Susilo.webp' },
-              { name: 'Rina Maharani', city: 'Bandar Lampung', rating: 5, review: 'Harga transparan dan pelayanan ramah, sangat puas.', avatar: '/images/siger.webp' },
+              { name: 'Rina Maharani', city: 'Bandar Lampung', rating: 5, review: 'Harga transparan dan pelayanan ramah, sangat puas.', avatar: '/images/Rina Maharani.webp' },
               { name: 'Dewi Kurnia', city: 'Pringsewu', rating: 4, review: 'Destinasi pilihan tepat, pengalaman tak terlupakan.', avatar: '/images/siger.webp' },
               { name: 'Tegar', city: 'Lampung Tengah', rating: 5, review: 'Booking mudah, CS responsif, recommended!', avatar: '/images/siger.webp' }
             ].map((c) => (
