@@ -23,7 +23,7 @@ export default function AboutPage() {
             <span className="block bg-linear-to-r from-amber-300 via-amber-200 to-amber-300 bg-clip-text text-transparent">Gerbang Petualangan Lampung</span>
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200 sm:text-xl">
-            Kami merancang pengalaman liburan 7 hari yang nyaman, terjangkau, dan penuh kisah. Dari budaya Bandar Lampung sampai pesona laut selatan, SigerTrip membantu Anda menjelajahi Lampung dengan percaya diri.
+            Liburan 7 hari yang nyaman dan terjangkau untuk menjelajahi Lampung.
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <Link href="/" className="inline-flex items-center justify-center rounded-full bg-amber-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-amber-300">
