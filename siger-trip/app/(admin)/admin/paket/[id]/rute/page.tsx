@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import RuteForm from "./RuteForm";
 import DeleteRuteButton from "./DeleteRuteButton";
+import ReorderButtons from "./ReorderButtons"; // ➕ 1. Impor komponen tombol geser
 
 type Params = Promise<{ id: string }>;
 type SearchParams = Promise<{ edit?: string }>;
@@ -22,7 +23,6 @@ export default async function AdminManagementRutePage({
   const travelPackage = await prisma.package.findUnique({
     where: { id },
     include: {
-      // CARI BARIS INI DI FILE page.tsx KELOLA RUTE:
       destinations: {
         orderBy: [{ day: "asc" }, { sortOrder: "asc" }, { createdAt: "asc" }],
       },
@@ -110,7 +110,12 @@ export default async function AdminManagementRutePage({
                     </div>
 
                     {/* TOMBOL AKSI RUTE */}
-                    <div className="flex items-center gap-1 self-center">
+                    <div className="flex items-center gap-1 self-center bg-slate-50 border border-slate-200/80 p-1 rounded-xl shadow-sm">
+                      {/* ➕ 2. Sisipkan komponen tombol geser di sini secara aman */}
+                      <ReorderButtons id={dest.id} />
+
+                      <span className="text-slate-200 text-xs px-0.5">|</span>
+
                       <Link
                         href={`/admin/paket/${id}/rute?edit=${dest.id}`}
                         className="text-xs p-2 text-slate-400 hover:text-blue-500 rounded-lg border border-transparent hover:border-slate-200 transition-all active:scale-[0.95]"
@@ -137,54 +142,21 @@ export default async function AdminManagementRutePage({
             key={editData ? editData.id : "tambah-mode"}
             packageId={travelPackage.id}
             totalDays={travelPackage.duration}
-            editData={editData}
+            editData={
+              editData
+                ? {
+                    id: editData.id,
+                    name: editData.name,
+                    category: editData.category,
+                    day: editData.day,
+                    location: editData.location,
+                    description: editData.description,
+                    image: editData.image || "/images/placeholder.jpg", // Mengubah null menjadi string placeholder aman
+                    price: editData.price,
+                  }
+                : null
+            }
           />
-        </div>
-
-        {/* TOMBOL AKSI RUTE */}
-        <div className="flex items-center gap-1 bg-white border border-slate-200/60 p-1 rounded-lg shadow-sm">
-          {/* TOMBOL GESER ATAS */}
-          <button
-            onClick={async () => {
-              await fetch("/api/destinasi/reorder", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ id: dest.id, direction: "up" }),
-              });
-              window.location.reload();
-            }}
-            className="p-1 text-[10px] hover:bg-slate-100 rounded transition-colors"
-            title="Naikkan Urutan"
-          >
-            ▲
-          </button>
-
-          {/* TOMBOL GESER BAWAH */}
-          <button
-            onClick={async () => {
-              await fetch("/api/destinasi/reorder", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ id: dest.id, direction: "down" }),
-              });
-              window.location.reload();
-            }}
-            className="p-1 text-[10px] hover:bg-slate-100 rounded transition-colors"
-            title="Turunkan Urutan"
-          >
-            ▼
-          </button>
-
-          <span className="text-slate-200 px-0.5">|</span>
-
-          <Link
-            href={`/admin/paket/${id}/rute?edit=${dest.id}`}
-            className="p-1.5 text-xs hover:bg-slate-100 rounded transition-colors"
-            title="Edit entri data"
-          >
-            ✏️
-          </Link>
-          <DeleteRuteButton id={dest.id} name={dest.name} />
         </div>
       </div>
     </div>
