@@ -22,8 +22,9 @@ export default async function AdminManagementRutePage({
   const travelPackage = await prisma.package.findUnique({
     where: { id },
     include: {
+      // CARI BARIS INI DI FILE page.tsx KELOLA RUTE:
       destinations: {
-        orderBy: [{ day: "asc" }, { createdAt: "asc" }],
+        orderBy: [{ day: "asc" }, { sortOrder: "asc" }, { createdAt: "asc" }], 
       },
     },
   });
