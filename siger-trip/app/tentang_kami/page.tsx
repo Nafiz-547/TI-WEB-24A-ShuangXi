@@ -15,7 +15,7 @@ export default function AboutPage() {
         />
         <div className="absolute inset-0 bg-slate-900/70" />
         <div className="relative mx-auto flex max-w-6xl flex-col justify-center px-6 py-24 sm:px-10 lg:px-16">
-          <span className="inline-flex rounded-full bg-amber-400 px-4 py-2 text-sm font-semibold uppercase tracking-[0.24em] text-slate-900 ring-1 ring-amber-300/40">
+          <span className="inline-flex items-center rounded-full bg-amber-400 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-slate-900 ring-1 ring-amber-300/40">
             Tentang Kami
           </span>
           <h1 className="mt-8 max-w-4xl text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
