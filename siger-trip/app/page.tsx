@@ -159,7 +159,7 @@ export default function HomePage() {
               { name: 'Budi Susilo', city: 'Lampung Selatan', rating: 4, review: 'Kendaraan bersih dan nyaman, layanan cepat tanggap.', avatar: '/images/Budi Susilo.webp' },
               { name: 'Rina Maharani', city: 'Bandar Lampung', rating: 5, review: 'Harga transparan dan pelayanan ramah, sangat puas.', avatar: '/images/Rina Maharani.webp' },
               { name: 'Dewi Kurnia', city: 'Pringsewu', rating: 4, review: 'Destinasi pilihan tepat, pengalaman tak terlupakan.', avatar: '/images/Dewi Kurnia.webp' },
-              { name: 'Tegar', city: 'Lampung Tengah', rating: 5, review: 'Booking mudah, CS responsif, recommended!', avatar: '/images/siger.webp' }
+              { name: 'Tegar', city: 'Lampung Tengah', rating: 5, review: 'Booking mudah, CS responsif, recommended!', avatar: '/images/Tegar Home.webp' }
             ].map((c) => (
               <article key={c.name} className="group bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-lg transition-shadow duration-300 hover:-translate-y-1 transform card-stack-mobile">
                 <div className="flex flex-col sm:flex-row items-start gap-4">
