@@ -7,7 +7,11 @@ export async function POST(req: Request) {
 
     // 1. Cari data rute yang mau digeser
     const currentDest = await prisma.destination.findUnique({ where: { id } });
-    if (!currentDest) return NextResponse.json({ error: "Rute tidak ditemukan" }, { status: 404 });
+    if (!currentDest)
+      return NextResponse.json(
+        { error: "Rute tidak ditemukan" },
+        { status: 404 },
+      );
 
     // 2. Cari rute pembanding di hari yang sama
     const siblingDestinations = await prisma.destination.findMany({
@@ -20,7 +24,10 @@ export async function POST(req: Request) {
 
     // Pastikan pergeseran tidak melebihi batas atas atau batas bawah
     if (targetIndex < 0 || targetIndex >= siblingDestinations.length) {
-      return NextResponse.json({ success: true, message: "Sudah di batas maksimal" });
+      return NextResponse.json({
+        success: true,
+        message: "Sudah di batas maksimal",
+      });
     }
 
     const targetDest = siblingDestinations[targetIndex];
@@ -40,6 +47,9 @@ export async function POST(req: Request) {
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error("Error reordering:", error);
-    return NextResponse.json({ error: "Gagal menggeser urutan" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Gagal menggeser urutan" },
+      { status: 500 },
+    );
   }
 }
