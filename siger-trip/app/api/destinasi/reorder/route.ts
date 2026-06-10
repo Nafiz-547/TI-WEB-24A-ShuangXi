@@ -5,51 +5,47 @@ export async function POST(req: Request) {
   try {
     const { id, direction } = await req.json();
 
-    // 1. Cari data rute yang mau digeser
+    // 1. Ambil data rute yang ditargetkan
     const currentDest = await prisma.destination.findUnique({ where: { id } });
-    if (!currentDest)
-      return NextResponse.json(
-        { error: "Rute tidak ditemukan" },
-        { status: 404 },
-      );
+    if (!currentDest) return NextResponse.json({ error: "Rute tidak ditemukan" }, { status: 404 });
 
-    // 2. Cari rute pembanding di hari yang sama
+    // 2. Ambil seluruh rute di hari yang sama, urutkan berdasarkan sortOrder lalu waktu pembuatan
     const siblingDestinations = await prisma.destination.findMany({
       where: { packageId: currentDest.packageId, day: currentDest.day },
-      orderBy: { sortOrder: "asc" },
+      orderBy: [
+        { sortOrder: "asc" },
+        { createdAt: "asc" }
+      ],
     });
 
     const currentIndex = siblingDestinations.findIndex((d) => d.id === id);
     let targetIndex = direction === "up" ? currentIndex - 1 : currentIndex + 1;
 
-    // Pastikan pergeseran tidak melebihi batas atas atau batas bawah
+    // Cegah pergeseran jika sudah melampaui batas atas atau bawah rute
     if (targetIndex < 0 || targetIndex >= siblingDestinations.length) {
-      return NextResponse.json({
-        success: true,
-        message: "Sudah di batas maksimal",
-      });
+      return NextResponse.json({ success: true, message: "Sudah berada di batas maksimal" });
     }
 
-    const targetDest = siblingDestinations[targetIndex];
+    // 3. Bangun transaksi massal untuk memperbarui nomor urut berdasarkan urutan indeks baru
+    const updates = siblingDestinations.map((dest, index) => {
+      let newOrder = index;
+      
+      // Tukar indeks posisi jika item berada di area pergeseran
+      if (index === currentIndex) newOrder = targetIndex;
+      if (index === targetIndex) newOrder = currentIndex;
 
-    // 3. Tukar nilai sortOrder di database menggunakan Prisma Transaction
-    await prisma.$transaction([
-      prisma.destination.update({
-        where: { id: currentDest.id },
-        data: { sortOrder: targetDest.sortOrder },
-      }),
-      prisma.destination.update({
-        where: { id: targetDest.id },
-        data: { sortOrder: currentDest.sortOrder },
-      }),
-    ]);
+      return prisma.destination.update({
+        where: { id: dest.id },
+        data: { sortOrder: newOrder },
+      });
+    });
+
+    // Jalankan pembaruan data secara serempak di PostgreSQL
+    await prisma.$transaction(updates);
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error("Error reordering:", error);
-    return NextResponse.json(
-      { error: "Gagal menggeser urutan" },
-      { status: 500 },
-    );
+    console.error("Kesalahan Sistem Reorder:", error);
+    return NextResponse.json({ error: "Gagal memproses perubahan posisi jalur linimasa" }, { status: 500 });
   }
 }
