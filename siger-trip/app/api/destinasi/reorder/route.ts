@@ -19,7 +19,7 @@ export async function POST(req: Request) {
     });
 
     const currentIndex = siblingDestinations.findIndex((d) => d.id === id);
-    let targetIndex = direction === "up" ? currentIndex - 1 : currentIndex + 1;
+    const targetIndex = direction === "up" ? currentIndex - 1 : currentIndex + 1;
 
     // Cegah pergeseran jika sudah melampaui batas atas atau bawah rute
     if (targetIndex < 0 || targetIndex >= siblingDestinations.length) {
