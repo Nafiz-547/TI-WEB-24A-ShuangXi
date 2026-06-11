@@ -15,14 +15,14 @@ export default function AboutPage() {
         />
         <div className="absolute inset-0 bg-slate-900/70" />
         <div className="relative mx-auto flex max-w-6xl flex-col items-center justify-center px-6 py-24 sm:px-10 lg:px-16 text-center">
-          <span className="inline-flex rounded-full bg-amber-400/10 px-4 py-2 text-sm font-semibold uppercase tracking-[0.24em] text-amber-300 ring-1 ring-amber-300/20">
+          <span className="inline-flex rounded-full bg-amber-400/10 px-4 py-2 text-sm font-semibold uppercase tracking-[0.24em] text-amber-300 ring-1 ring-amber-300/20 mb-4">
             Tentang Kami
           </span>
-          <h1 className="mt-8 max-w-4xl text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+          <h1 className="mt-8 max-w-4xl text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl mb-6">
             <span className="block">SigerTrip:</span>
             <span className="block bg-linear-to-r from-amber-300 via-amber-200 to-amber-300 bg-clip-text text-transparent">Gerbang Petualangan Lampung</span>
           </h1>
-          <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200 sm:text-xl">
+          <p className="max-w-3xl text-lg leading-8 text-slate-200 sm:text-xl text-justify">
             Liburan 7 hari yang nyaman dan terjangkau untuk menjelajahi Lampung.
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
