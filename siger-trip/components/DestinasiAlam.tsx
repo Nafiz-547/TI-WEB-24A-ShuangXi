@@ -17,6 +17,14 @@ const destinations = [
     description: 'Way Kambas adalah pusat konservasi gajah dan ekowisata yang terkenal. Populer karena program konservasi yang berfokus pada pengunjung ramah lingkungan dan pengalaman interaksi satwa yang edukatif.',
     image: '/images/Way%20Kambas%20home.webp',
     alt: 'Area konservasi Way Kambas dengan suasana alam'
+  },
+  {
+    id: 'pahawang',
+    title: 'Pahawang',
+    location: 'Lampung Selatan',
+    description: 'Pahawang adalah pulau tropis yang terkenal dengan spot snorkeling dan watersportnya. Pengunjung bisa snorkeling di air laut yang jernih, island hopping ke Pulau Kelagian dan Pulau Kelapa, serta menikmati panorama bawah laut dengan terumbu karang dan ikan warna-warni.',
+    image: '/images/pahawang.webp',
+    alt: 'Pemandangan pantai dan laut di Pulau Pahawang Lampung'
   }
 ]
 
