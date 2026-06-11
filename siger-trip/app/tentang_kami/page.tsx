@@ -22,7 +22,7 @@ export default function AboutPage() {
             <span className="block">SigerTrip:</span>
             <span className="block bg-linear-to-r from-amber-300 via-amber-200 to-amber-300 bg-clip-text text-transparent">Gerbang Petualangan Lampung</span>
           </h1>
-          <p className="max-w-3xl text-lg leading-8 text-slate-200 sm:text-xl text-justify">
+          <p className="max-w-3xl text-lg leading-8 text- slate-200 sm:text-xl text-justify">
             Liburan 7 hari yang nyaman dan terjangkau untuk menjelajahi Lampung.
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
@@ -41,7 +41,7 @@ export default function AboutPage() {
       <section className="mx-auto max-w-6xl px-6 py-20 sm:px-10 lg:px-16">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-semibold text-slate-900">Apa yang Kami Tawarkan?</h2>
-          <p className="mt-4 text-lg text-slate-600">SigerTrip bukan hanya sekadar layanan travel biasa. Kami menghadirkan pengalaman wisata Lampung yang komprehensif dan berkesan, dibangun atas fondasi nilai-nilai utama yang kami pegang teguh. Setiap paket dirancang dengan cermat untuk memberikan Anda petualangan yang tak terlupakan, memadukan keindahan alam, kekayaan budaya, dan kenyamanan berkualitas tinggi. Kami berkomitmen untuk membuat setiap perjalanan Anda menjadi lebih dari sekadar liburan—menjadi sebuah cerita yang akan Anda ceritakan untuk selamanya.</p>
+          <p className="mt-4 text-lg text-slate-600 text-justify">SigerTrip bukan hanya sekadar layanan travel biasa. Kami menghadirkan pengalaman wisata Lampung yang komprehensif dan berkesan, dibangun atas fondasi nilai-nilai utama yang kami pegang teguh. Setiap paket dirancang dengan cermat untuk memberikan Anda petualangan yang tak terlupakan, memadukan keindahan alam, kekayaan budaya, dan kenyamanan berkualitas tinggi. Kami berkomitmen untuk membuat setiap perjalanan Anda menjadi lebih dari sekadar liburan—menjadi sebuah cerita yang akan Anda ceritakan untuk selamanya.</p>
         </div>
 
         <div className="grid gap-12 lg:grid-cols-3 mb-20">
