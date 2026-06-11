@@ -376,7 +376,7 @@ export default function AboutPage() {
             </div>
             <h3 className="text-2xl font-semibold text-slate-900 mb-2">Doni Hermawan</h3>
             <p className="text-green-500 font-semibold mb-3">Lead Guide & Experience Designer</p>
-            <p className="text-slate-600 leading-7 mb-4">
+            <p className="text-slate-600 leading-7 mb-4 text-justify">
               Ahli dalam menciptakan itinerari yang tak terlupakan dengan pengetahuan mendalam tentang destinasi Lampung dan budaya lokal.
             </p>
             <div className="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
