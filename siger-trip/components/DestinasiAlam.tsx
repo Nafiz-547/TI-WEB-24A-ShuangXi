@@ -25,6 +25,14 @@ const destinations = [
     description: 'Pahawang adalah pulau tropis yang terkenal dengan spot snorkeling dan watersportnya. Pengunjung bisa snorkeling di air laut yang jernih, island hopping ke Pulau Kelagian dan Pulau Kelapa, serta menikmati panorama bawah laut dengan terumbu karang dan ikan warna-warni.',
     image: '/images/pahawang.webp',
     alt: 'Pemandangan pantai dan laut di Pulau Pahawang Lampung'
+  },
+  {
+    id: 'krakatau-park',
+    title: 'Krakatau Park',
+    location: 'Lampung Selatan',
+    description: 'Krakatau Park adalah taman rekreasi tepi pantai yang menyajikan pemandangan selat Sunda dan aktivitas keluarga. Di sana Anda bisa menikmati taman bermain, spot foto, piknik tepi pantai, dan menyaksikan sunset dengan latar Gunung Krakatau.',
+    image: '/images/Krakatau Park.webp',
+    alt: 'Pemandangan Krakatau Park Lampung'
   }
 ]
 
