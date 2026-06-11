@@ -34,6 +34,14 @@ export default function SorotanKuliner() {
       img: '/images/Pindang Patin.webp',
       alt: 'Pindang Patin Lampung',
       href: 'https://www.google.com/search?q=Pindang+Patin+Lampung'
+    },
+    {
+      id: 'nasi-uduk-toha',
+      title: 'Nasi Uduk Toha',
+      desc: 'Nasi Uduk Toha khas Lampung terkenal karena aroma santan yang gurih, lauk lengkap, dan sambal kacangnya yang pedas manis. Menu legendaris ini sering jadi pilihan utama warga Bandar Lampung dan wisatawan yang ingin mencicipi sajian tradisional pagi hari.',
+      img: '/images/Nasi Uduk Toha.webp',
+      alt: 'Nasi Uduk Toha Lampung',
+      href: 'https://www.google.com/search?q=Nasi+Uduk+Toha'
     }
   ];
 
