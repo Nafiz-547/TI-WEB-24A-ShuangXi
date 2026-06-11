@@ -91,7 +91,7 @@ export default function AboutPage() {
           </div>
 
           <div>
-            <div className="text-4xl mb-6 text-slate-400">✱</div>
+            <div className="text-4xl mb-6 text-slate-400">✦</div>
             <h3 className="card-title text-2xl mb-6">Fokus Layanan Kami</h3>
             <div className="space-y-5">
               <div>
