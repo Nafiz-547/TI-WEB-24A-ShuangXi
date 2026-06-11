@@ -41,6 +41,14 @@ const destinations = [
     description: 'Pulau Wayang adalah destinasi pulau kecil yang terkenal dengan pasir putih, air laut jernih, dan suasana tenang. Di sana pengunjung dapat snorkeling, berenang, memancing, atau sekadar bersantai menikmati panorama pulau-pulau kecil di sekitar Selat Sunda.',
     image: '/images/Pulau Wayang.webp',
     alt: 'Pemandangan Pulau Wayang Lampung'
+  },
+  {
+    id: 'teluk-kiluan',
+    title: 'Teluk Kiluan',
+    location: 'Lampung Selatan',
+    description: 'Teluk Kiluan terkenal dengan wisata lumba-lumba dan panorama teluk yang indah. Pengunjung bisa naik boat, menyaksikan atraksi lumba-lumba liar, berenang di pantai, dan menikmati sunset di pesisir yang tenang.',
+    image: '/images/Teluk Kiluan.webp',
+    alt: 'Pemandangan Teluk Kiluan Lampung'
   }
 ]
 
