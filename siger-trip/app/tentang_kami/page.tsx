@@ -56,7 +56,7 @@ export default function AboutPage() {
           <div className="text-center">
             <div className="text-4xl mb-6 text-slate-400">✱</div>
             <h3 className="card-title text-xl mb-3">Visi Kami</h3>
-            <p className="card-desc leading-7">
+            <p className="card-desc leading-7 text-justify">
               Menjadi travel partner terbaik untuk wisata Lampung. Kami ingin menjadi pilihan utama wisatawan yang mencari pengalaman autentik dan tak terlupakan.
             </p>
           </div>
