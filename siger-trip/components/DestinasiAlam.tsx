@@ -33,6 +33,14 @@ const destinations = [
     description: 'Krakatau Park adalah taman rekreasi tepi pantai yang menyajikan pemandangan selat Sunda dan aktivitas keluarga. Di sana Anda bisa menikmati taman bermain, spot foto, piknik tepi pantai, dan menyaksikan sunset dengan latar Gunung Krakatau.',
     image: '/images/Krakatau Park.webp',
     alt: 'Pemandangan Krakatau Park Lampung'
+  },
+  {
+    id: 'pulau-wayang',
+    title: 'Pulau Wayang',
+    location: 'Lampung Selatan',
+    description: 'Pulau Wayang adalah destinasi pulau kecil yang terkenal dengan pasir putih, air laut jernih, dan suasana tenang. Di sana pengunjung dapat snorkeling, berenang, memancing, atau sekadar bersantai menikmati panorama pulau-pulau kecil di sekitar Selat Sunda.',
+    image: '/images/Pulau Wayang.webp',
+    alt: 'Pemandangan Pulau Wayang Lampung'
   }
 ]
 
