@@ -64,7 +64,7 @@ export default function AboutPage() {
           <div className="text-center">
             <div className="text-4xl mb-6 text-slate-400">✱</div>
             <h3 className="card-title text-xl mb-3">Misi Kami</h3>
-            <p className="card-desc leading-7">
+            <p className="card-desc leading-7 text-justify">
               Menyajikan perjalanan mudah dan inspiratif. Kami berkomitmen memberikan itinerari terencana dengan dukungan lokal penuh di setiap langkah.
             </p>
           </div>
