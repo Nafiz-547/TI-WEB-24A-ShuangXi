@@ -338,7 +338,7 @@ export default function AboutPage() {
             </div>
             <h3 className="text-2xl font-semibold text-slate-900 mb-2">Eka Prasetya</h3>
             <p className="text-amber-500 font-semibold mb-3">Founder & CEO</p>
-            <p className="text-slate-600 leading-7 mb-4">
+            <p className="text-slate-600 leading-7 mb-4 text-justify">
               Visioner di balik SigerTrip dengan pengalaman 10 tahun di industri pariwisata. Eka berdedikasi menciptakan pengalaman travel yang bermakna dan autentik untuk setiap traveler.
             </p>
             <div className="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
