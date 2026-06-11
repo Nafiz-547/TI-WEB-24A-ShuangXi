@@ -46,7 +46,7 @@ export default function AboutPage() {
 
         <div className="grid gap-12 lg:grid-cols-3 mb-20">
           <div className="text-center">
-            <div className="text-4xl mb-6 text-slate-400">🧭</div>
+            <div className="text-4xl mb-6 text-slate-400">✦</div>
             <h3 className="card-title text-xl mb-3">Filosofi Kami</h3>
             <p className="card-desc leading-7 text-justify">
               Mengubah perjalanan menjadi cerita bermakna. Kami percaya setiap destinasi memiliki cerita unik yang menghubungkan wisatawan dengan budaya lokal Lampung.
