@@ -49,7 +49,7 @@ export default function SorotanKuliner() {
       desc: 'Mie Khodon khas Lampung dikenal sebagai sajian mi rumahan yang pedas dan gurih, memakai bumbu kacang, cabai, dan potongan ayam kampung. Makanan ini banyak digemari karena teksturnya kenyal dan cita rasanya yang kuat, serta sering ditemukan di warung tradisional Bandar Lampung.',
       img: '/images/Mie Khodon.webp',
       alt: 'Mie Khodon Lampung',
-      href: 'https://www.google.com/search?q=Mie+Khodon+Lampung'
+      href: 'https://budaya-indonesia.org/Mie-Khodon-Khas-Bandar-Lampung'
     }
   ];
 
