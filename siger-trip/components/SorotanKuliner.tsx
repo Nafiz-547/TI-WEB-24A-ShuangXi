@@ -33,7 +33,7 @@ export default function SorotanKuliner() {
       desc: 'Pindang Patin adalah masakan tradisional Lampung yang terbuat dari ikan patin segar yang dipindang dengan kuah rempah hangat berisi lengkuas, jahe, dan cabai. Hidangan ini menjadi favorit karena cita rasa kuah yang gurih dan tradisional, serta berasal dari daerah-daerah seperti Lampung Selatan dan Lampung Tengah yang kaya dengan perairan ikan patin.',
       img: '/images/Pindang Patin.webp',
       alt: 'Pindang Patin Lampung',
-      href: 'https://www.google.com/search?q=Pindang+Patin+Lampung'
+      href: 'https://budaya-indonesia.org/Pindang-Patin-Palembang-1'
     },
     {
       id: 'nasi-uduk-toha',
