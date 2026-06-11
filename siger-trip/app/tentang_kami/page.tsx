@@ -357,7 +357,7 @@ export default function AboutPage() {
             </div>
             <h3 className="text-2xl font-semibold text-slate-900 mb-2">Rini Susanto</h3>
             <p className="text-blue-500 font-semibold mb-3">Operations Manager</p>
-            <p className="text-slate-600 leading-7 mb-4">
+            <p className="text-slate-600 leading-7 mb-4 text-justify">
               Memastikan setiap detail perjalanan Anda berjalan sempurna. Rini memiliki keahlian dalam koordinasi logistik dan manajemen tim yang luar biasa.
             </p>
             <div className="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
