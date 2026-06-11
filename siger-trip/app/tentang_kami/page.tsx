@@ -41,7 +41,7 @@ export default function AboutPage() {
       <section className="mx-auto max-w-6xl px-6 py-20 sm:px-10 lg:px-16">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-semibold text-slate-900">Apa yang Kami Tawarkan?</h2>
-          <p className="mt-4 text-lg text-slate-600 text-justify">SigerTrip bukan hanya sekadar layanan travel biasa. Kami menghadirkan pengalaman wisata Lampung yang komprehensif dan berkesan, dibangun atas fondasi nilai-nilai utama yang kami pegang teguh. Setiap paket dirancang dengan cermat untuk memberikan Anda petualangan yang tak terlupakan, memadukan keindahan alam, kekayaan budaya, dan kenyamanan berkualitas tinggi. Kami berkomitmen untuk membuat setiap perjalanan Anda menjadi lebih dari sekadar liburan—menjadi sebuah cerita yang akan Anda ceritakan untuk selamanya.</p>
+          <p className="mt-4 text-lg text-slate-600 text-justify">SigerTrip menghadirkan pengalaman perjalanan Lampung yang nyaman, autentik, dan mudah. Setiap paket dirancang untuk menggabungkan keindahan alam, budaya lokal, dan kenyamanan tanpa repot.</p>
         </div>
 
         <div className="grid gap-12 lg:grid-cols-3 mb-20">
