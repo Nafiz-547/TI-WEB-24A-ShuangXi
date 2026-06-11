@@ -18,6 +18,14 @@ export default function SorotanKuliner() {
       img: '/images/seruit%20home.webp',
       alt: 'Seruit Lampung',
       href: 'https://tribratanews.lampung.polri.go.id/detail-post/seruit-makanan-khas-lampung-yang-lezat-dan-penuh-tradisi'
+    },
+    {
+      id: 'bakso-son-haji-sony',
+      title: 'Bakso Son Haji Sony',
+      desc: 'Bakso Son Haji Sony adalah bakso legendaris Lampung yang terkenal karena kuah kaldunya pekat, bakso urat kenyal, dan pangsit goreng yang renyah. Asal-usulnya sangat terkait dengan Bandar Lampung, khususnya outlet asli di kawasan Teluk Betung, sehingga sering disebut sebagai salah satu bakso khas dan favorit pengunjung di Lampung.',
+      img: '/images/Bakso Son Haji Sony.webp',
+      alt: 'Bakso Son Haji Sony Lampung',
+      href: 'https://www.google.com/search?q=Bakso+Son+Haji+Sony'
     }
   ];
 
