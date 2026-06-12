@@ -24,3 +24,51 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+.content {
+  margin: 0;
+  color: inherit;
+}
+
+/* Keep header/footer minimal — layout.tsx uses Tailwind classes for visuals */
+.site-header {
+  display: flex;
+  align-items: center;
+}
+
+.site-footer {
+  color: #e6e6e6;
+}
+
+/* Card typography for consistent readability */
+.card-title {
+  color: #0f172a;
+  font-weight: 700;
+  opacity: 1;
+  line-height: 1.2;
+}
+
+.card-desc {
+  color: #334155;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* Utility to ensure card stacks on mobile with image on top */
+.card-stack-mobile {
+  display: flex;
+  flex-direction: column;
+}
+.card-stack-mobile .card-media {
+  order: 0;
+}
+.card-stack-mobile .card-body {
+  order: 1;
+}
+
+.text-border {
+  text-decoration: underline;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}

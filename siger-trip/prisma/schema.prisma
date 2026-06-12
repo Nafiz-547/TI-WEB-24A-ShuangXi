@@ -1,0 +1,39 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+
+// 1. MODEL UTAMA: Paket Wisata SigerTrip
+model Package {
+  id           String        @id @default(cuid())
+  title        String        // Contoh: "3 Hari Keliling Kuliner di Bandar Lampung"
+  duration     Int           // Contoh: 3
+  category     String        // Contoh: "Kuliner", "Alam", "Perkotaan"
+  description  String        @db.Text
+  basePrice    String        // Contoh: "Rp 350.000"
+  image        String        // Banner utama paket
+  destinations Destination[] // Relasi: 1 Paket memiliki banyak titik pemberhentian/itinerary
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @default(now()) @updatedAt
+}
+
+// 2. MODEL TIMELINE: Titik Pemberhentian Aktivitas Harian
+model Destination {
+  id          String   @id @default(cuid())
+  name        String
+  category    String
+  day         Int
+  location    String
+  description String
+  image       String?
+  price       String
+  sortOrder   Int      @default(0) // ➕ Tambahkan baris ini untuk menyimpan indeks posisi
+  packageId   String
+  package     Package  @relation(fields: [packageId], references: [id], onDelete: Cascade)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
