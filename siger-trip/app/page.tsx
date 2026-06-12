@@ -1,5 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import DestinasiAlam from "../components/DestinasiAlam";
+import SorotanKuliner from "../components/SorotanKuliner";
+import TentangLampung from "../components/TentangLampung";
 
 export default function HomePage() {
   return (
@@ -106,37 +109,35 @@ export default function HomePage() {
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { title: 'Harga transparan dan kompetitif', icon: (
-                <svg className="h-8 w-8 text-amber-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 1v22" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/><path d="M17 5H7a3 3 0 000 6h10a3 3 0 010 6H7" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
-              )},
-              { title: 'Driver berpengalaman', icon: (
-                <svg className="h-8 w-8 text-amber-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12c0-4 4-7 9-7s9 3 9 7v5a1 1 0 01-1 1h-4v-3H8v3H4a1 1 0 01-1-1v-5z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/><circle cx="12" cy="8" r="2" stroke="currentColor" strokeWidth="1.6"/></svg>
-              )},
-              { title: 'Kendaraan bersih dan nyaman', icon: (
-                <svg className="h-8 w-8 text-amber-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="7" width="20" height="10" rx="2" stroke="currentColor" strokeWidth="1.6"/><path d="M7 17v2M17 17v2" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/></svg>
-              )},
-              { title: 'Pelayanan ramah dan responsif', icon: (
-                <svg className="h-8 w-8 text-amber-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
-              )},
-              { title: 'Destinasi wisata terbaik di Lampung', icon: (
-                <svg className="h-8 w-8 text-amber-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-              )},
-              { title: 'Fleksibel menyesuaikan kebutuhan pelanggan', icon: (
-                <svg className="h-8 w-8 text-amber-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12h18M12 3v18" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/></svg>
-              )},
-              { title: 'Proses booking mudah', icon: (
-                <svg className="h-8 w-8 text-amber-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" strokeWidth="1.6"/><path d="M16 2v4M8 2v4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/></svg>
-              )},
-              { title: 'Dukungan customer service', icon: (
-                <svg className="h-8 w-8 text-amber-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 10a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/><path d="M8 14s1-1 4-1 4 1 4 1" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>
-              )}
+              { title: 'Harga transparan dan kompetitif', image: '/images/Harga transparan dan kompetitif.webp', alt: 'Harga transparan dan kompetitif', useImage: true },
+              { title: 'Driver berpengalaman', image: '/images/driver berpengalaman home.webp', alt: 'Driver berpengalaman', useImage: true },
+              { title: 'Kendaraan bersih dan nyaman', image: '/images/Kendaraan bersih dan nyaman.webp', alt: 'Kendaraan bersih dan nyaman', useImage: true },
+              { title: 'Pelayanan ramah dan responsif', image: '/images/Pelayanan ramah dan responsif home.webp', alt: 'Pelayanan ramah dan responsif', useImage: true },
+              { title: 'Destinasi wisata terbaik di Lampung', image: '/images/gedung siger home.webp', alt: 'Destinasi wisata terbaik di Lampung', useImage: true },
+              { title: 'Fleksibel menyesuaikan kebutuhan pelanggan', image: '/images/fleksibel menyesuaikan kebutuhan pelanggan.webp', alt: 'Fleksibel menyesuaikan kebutuhan pelanggan', useImage: true },
+              { title: 'Proses booking mudah', image: '/images/Proses booking mudah.webp', alt: 'Proses booking mudah', useImage: true },
+              { title: 'Dukungan customer service', image: '/images/Dukungan customer service.webp', alt: 'Dukungan customer service', useImage: true }
             ].map((b) => (
-              <div key={b.title} className="group rounded-2xl border border-gray-100 p-6 bg-white shadow-sm hover:shadow-lg transition-shadow duration-300 hover:-translate-y-1 transform">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-amber-50 text-amber-600">{b.icon}</div>
-                  <h4 className="card-title text-lg">{b.title}</h4>
-                </div>
-                <p className="card-desc text-sm">Kami memastikan setiap poin ini menjadi bagian dari pengalaman Anda bersama Siger Trip.</p>
+              <div key={b.title} className="group rounded-2xl border border-gray-100 bg-white shadow-sm hover:shadow-lg transition-shadow duration-300 hover:-translate-y-1 transform overflow-hidden">
+                {b.useImage ? (
+                  <>
+                    <div className="relative h-48 w-full overflow-hidden bg-gray-200">
+                      <Image src={b.image} alt={b.alt} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                    </div>
+                    <div className="p-5">
+                      <h4 className="card-title text-base md:text-lg font-semibold text-gray-900 mb-2">{b.title}</h4>
+                      <p className="card-desc text-sm">Kami memastikan setiap poin ini menjadi bagian dari pengalaman Anda bersama Siger Trip.</p>
+                    </div>
+                  </>
+                ) : (
+                  <div className="p-6">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-amber-50 text-amber-600">{b.icon}</div>
+                      <h4 className="card-title text-lg">{b.title}</h4>
+                    </div>
+                    <p className="card-desc text-sm">Kami memastikan setiap poin ini menjadi bagian dari pengalaman Anda bersama Siger Trip.</p>
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -153,12 +154,12 @@ export default function HomePage() {
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              { name: 'Andi Putra', city: 'Bandar Lampung', rating: 5, review: 'Perjalanan lancar, driver sangat profesional. Rekomendasi!', avatar: '/images/siger.webp' },
-              { name: 'Sari Dewi', city: 'Metro', rating: 5, review: 'Itinerary pas dan fleksibel, anak-anak juga senang.', avatar: '/images/siger.webp' },
-              { name: 'Budi Susilo', city: 'Lampung Selatan', rating: 4, review: 'Kendaraan bersih dan nyaman, layanan cepat tanggap.', avatar: '/images/siger.webp' },
-              { name: 'Rina Maharani', city: 'Bandar Lampung', rating: 5, review: 'Harga transparan dan pelayanan ramah, sangat puas.', avatar: '/images/siger.webp' },
-              { name: 'Dewi Kurnia', city: 'Pringsewu', rating: 4, review: 'Destinasi pilihan tepat, pengalaman tak terlupakan.', avatar: '/images/siger.webp' },
-              { name: 'Tegar', city: 'Lampung Tengah', rating: 5, review: 'Booking mudah, CS responsif, recommended!', avatar: '/images/siger.webp' }
+              { name: 'Andi Putra', city: 'Bandar Lampung', rating: 5, review: 'Perjalanan lancar, driver sangat profesional. Rekomendasi!', avatar: '/images/Andi Putra.webp' },
+              { name: 'Sari Dewi', city: 'Metro', rating: 5, review: 'Itinerary pas dan fleksibel, anak-anak juga senang.', avatar: '/images/Sari Dewi.webp' },
+              { name: 'Budi Susilo', city: 'Lampung Selatan', rating: 4, review: 'Kendaraan bersih dan nyaman, layanan cepat tanggap.', avatar: '/images/Budi Susilo.webp' },
+              { name: 'Rina Maharani', city: 'Bandar Lampung', rating: 5, review: 'Harga transparan dan pelayanan ramah, sangat puas.', avatar: '/images/Rina Maharani.webp' },
+              { name: 'Dewi Kurnia', city: 'Pringsewu', rating: 4, review: 'Destinasi pilihan tepat, pengalaman tak terlupakan.', avatar: '/images/Dewi Kurnia.webp' },
+              { name: 'Tegar', city: 'Lampung Tengah', rating: 5, review: 'Booking mudah, CS responsif, recommended!', avatar: '/images/Tegar Home.webp' }
             ].map((c) => (
               <article key={c.name} className="group bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-lg transition-shadow duration-300 hover:-translate-y-1 transform card-stack-mobile">
                 <div className="flex flex-col sm:flex-row items-start gap-4">
@@ -188,57 +189,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SOROTAN KULINER */}
-      <section id="kuliner" className="py-16 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4">
-          <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Sorotan Kuliner</h3>
-          <div className="grid gap-6 md:grid-cols-2">
-            {/* Gulai Taboh */}
-            <article className="rounded-lg bg-white border p-6 shadow-sm flex flex-col sm:flex-row gap-4 items-start card-stack-mobile">
-              <Image src="/images/Gulai%20Taboh%20Ikan%20khas%20Lampung%20home.webp" alt="Gulai Taboh" width={180} height={120} className="rounded-md object-cover" />
-              <div className="card-body">
-                <h4 className="card-title text-lg mb-2">Gulai Taboh Ikan</h4>
-                <p className="card-desc mb-2">Gulai Taboh berakar dari tradisi pesisir Lampung; kuah santan kaya rempah dibuat dengan bahan lokal dan ikan segar. Kepopulerannya datang dari rasa kuat rempah dan keterikatan pada budaya lokal yang diwariskan turun-temurun.</p>
-              </div>
-            </article>
-
-            {/* Seruit */}
-            <article className="rounded-lg bg-white border p-6 shadow-sm flex flex-col sm:flex-row gap-4 items-start card-stack-mobile">
-              <Image src="/images/seruit%20home.webp" alt="Seruit" width={180} height={120} className="rounded-md object-cover" />
-              <div className="card-body">
-                <h4 className="card-title text-lg mb-2">Seruit</h4>
-                <p className="card-desc mb-2">Seruit adalah olahan ikan asap yang populer di kalangan masyarakat Lampung. Asal-usulnya terkait kebiasaan pengawetan ikan di komunitas pesisir; popularitasnya meningkat karena cita rasa unik dan ketersediaannya di pasar lokal.</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      {/* SOROTAN DESTINASI ALAM */}
-      <section id="alam" className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Sorotan Destinasi Alam</h3>
-          <div className="grid gap-6 md:grid-cols-2">
-            {/* Anak Gunung Krakatau */}
-            <article className="rounded-lg bg-gray-50 border p-6 shadow-sm flex flex-col sm:flex-row gap-4 items-start card-stack-mobile">
-              <Image src="/images/Anak%20Gunung%20Krakatau%20home.webp" alt="Anak Gunung Krakatau" width={180} height={120} className="rounded-md object-cover" />
-              <div className="card-body">
-                <h4 className="card-title text-lg mb-2">Anak Gunung Krakatau</h4>
-                <p className="card-desc mb-2">Anak Gunung Krakatau menjadi sorotan karena latar sejarah vulkanik yang dramatis dan proses geologi yang masih aktif. Wisatawan tertarik untuk melihat fenomena alam ini serta belajar tentang dampak sejarah letusan pada wilayah sekitarnya.</p>
-              </div>
-            </article>
-
-            {/* Way Kambas */}
-            <article className="rounded-lg bg-gray-50 border p-6 shadow-sm flex flex-col sm:flex-row gap-4 items-start card-stack-mobile">
-              <Image src="/images/Way%20Kambas%20home.webp" alt="Way Kambas" width={180} height={120} className="rounded-md object-cover" />
-              <div className="card-body">
-                <h4 className="card-title text-lg mb-2">Way Kambas</h4>
-                <p className="card-desc mb-2">Way Kambas adalah pusat konservasi gajah dan ekowisata yang terkenal. Populer karena program konservasi yang berfokus pada pengunjung ramah lingkungan dan pengalaman interaksi satwa yang edukatif.</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
+      <TentangLampung />
+      <SorotanKuliner />
+      <DestinasiAlam />
 
       {/* Bagian selanjutnya (misal ringkasan jasa) bisa diteruskan Tama di bawah sini */}
     </main>
