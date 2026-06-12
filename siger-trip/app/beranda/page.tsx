@@ -1,6 +1,6 @@
 import React from "react";
 // import './beranda.modules.css'
-import styles from "@/modules/beranda.module.css";
+import styles from "@/app/modules/beranda.module.css";
 
 export default function Berandapage() {
   return (
