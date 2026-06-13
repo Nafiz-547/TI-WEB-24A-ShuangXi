@@ -7,7 +7,7 @@ export async function POST(req: Request) {
     const { id, direction } = body;
 
     // 1. Ambil data rute yang sedang di-klik
-    const currentDest = await prisma.findUnique({ where: { id } });
+    const currentDest = await prisma.destination.findUnique({ where: { id } });
     if (!currentDest) return NextResponse.json({ error: "Data tidak ditemukan" }, { status: 404 });
 
     // 2. Ambil SEMUA rute di Paket dan HARI yang sama (Diurutkan berdasarkan sortOrder, lalu waktu buat)
@@ -50,7 +50,7 @@ export async function POST(req: Request) {
     ]);
 
     // 6. Rapikan sisa urutan data lainnya agar tidak ada angka ganda (Self-Healing System)
-    const cleanupUpdates: any[] = []; // Siapkan keranjang kosong yang bersih
+    const cleanupUpdates: ReturnType<typeof prisma.destination.update>[] = []; // Siapkan keranjang kosong yang bersih
 
     siblings.forEach((dest, index) => {
       // Hanya masukkan ke keranjang jika rute ini BUKAN rute yang sedang ditukar
