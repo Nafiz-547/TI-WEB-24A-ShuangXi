@@ -7,7 +7,7 @@ export async function POST(req: Request) {
     const { id, direction } = body;
 
     // 1. Ambil data rute yang sedang di-klik
-    const currentDest = await prisma.destination.findUnique({ where: { id } });
+    const currentDest = await prisma.findUnique({ where: { id } });
     if (!currentDest) return NextResponse.json({ error: "Data tidak ditemukan" }, { status: 404 });
 
     // 2. Ambil SEMUA rute di Paket dan HARI yang sama (Diurutkan berdasarkan sortOrder, lalu waktu buat)
@@ -50,18 +50,27 @@ export async function POST(req: Request) {
     ]);
 
     // 6. Rapikan sisa urutan data lainnya agar tidak ada angka ganda (Self-Healing System)
-    const cleanupUpdates = siblings.map((dest, index) => {
-      if (dest.id === currentId || dest.id === targetId) return null; // Lewati yang baru saja ditukar
-      return prisma.destination.update({
-        where: { id: dest.id },
-        data: { sortOrder: index }
-      });
-    }).filter(Boolean); // Buang nilai null
+    const cleanupUpdates: any[] = []; // Siapkan keranjang kosong yang bersih
 
-    // @ts-ignore
-    if (cleanupUpdates.length > 0) await prisma.$transaction(cleanupUpdates);
+    siblings.forEach((dest, index) => {
+      // Hanya masukkan ke keranjang jika rute ini BUKAN rute yang sedang ditukar
+      if (dest.id !== currentId && dest.id !== targetId) {
+        cleanupUpdates.push(
+          prisma.destination.update({
+            where: { id: dest.id },
+            data: { sortOrder: index },
+          })
+        );
+      }
+    });
+
+    // Eksekusi transaksi tanpa perlu pengabaian TypeScript (ts-ignore) sama sekali!
+    if (cleanupUpdates.length > 0) {
+      await prisma.$transaction(cleanupUpdates);
+    }
 
     return NextResponse.json({ success: true });
+    
   } catch (error) {
     console.error("Gagal Reorder:", error);
     return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
