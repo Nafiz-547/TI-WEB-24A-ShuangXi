@@ -3,19 +3,18 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider  = "postgresql"
 }
-
 
 // 1. MODEL UTAMA: Paket Wisata SigerTrip
 model Package {
   id           String        @id @default(cuid())
-  title        String        // Contoh: "3 Hari Keliling Kuliner di Bandar Lampung"
-  duration     Int           // Contoh: 3
-  category     String        // Contoh: "Kuliner", "Alam", "Perkotaan"
+  title        String // Contoh: "3 Hari Keliling Kuliner di Bandar Lampung"
+  duration     Int // Contoh: 3
+  category     String // Contoh: "Kuliner", "Alam", "Perkotaan"
   description  String        @db.Text
-  basePrice    String        // Contoh: "Rp 350.000"
-  image        String        // Banner utama paket
+  basePrice    String // Contoh: "Rp 350.000"
+  image        String // Banner utama paket
   destinations Destination[] // Relasi: 1 Paket memiliki banyak titik pemberhentian/itinerary
   createdAt    DateTime      @default(now())
   updatedAt    DateTime      @default(now()) @updatedAt
