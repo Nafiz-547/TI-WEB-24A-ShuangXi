@@ -23,8 +23,8 @@ export default async function PackageTimelinePage({
     where: { id },
     include: {
       destinations: {
-        where: { day: selectedDay },
-        orderBy: { createdAt: "asc" },
+        // Urutkan berdasarkan Hari, lalu nomor SortOrder baru
+        orderBy: [{ day: "asc" }, { sortOrder: "asc" }, { createdAt: "asc" }],
       },
     },
   });
