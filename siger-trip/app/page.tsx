@@ -70,12 +70,7 @@ export default function HomePage() {
     <main>
       {/* HERO SECTION */}
       <section className="relative h-[80vh] w-full flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 hover:scale-105"
-          style={{
-            backgroundImage: "url('/images/gedung%20siger%20home.webp')",
-          }}
-        >
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 hover:scale-105 bg-[url('/images/gedung%20siger%20home.webp')]">
           <div className="absolute inset-0 bg-gray-600/55"></div>
         </div>
 
