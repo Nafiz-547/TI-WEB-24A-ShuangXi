@@ -3,49 +3,67 @@ import { prisma } from "@/lib/prisma";
 
 export async function POST(req: Request) {
   try {
-    const { id, direction } = await req.json();
+    const body = await req.json();
+    const { id, direction } = body;
 
-    // 1. Ambil data rute yang ditargetkan
+    // 1. Ambil data rute yang sedang di-klik
     const currentDest = await prisma.destination.findUnique({ where: { id } });
-    if (!currentDest) return NextResponse.json({ error: "Rute tidak ditemukan" }, { status: 404 });
+    if (!currentDest) return NextResponse.json({ error: "Data tidak ditemukan" }, { status: 404 });
 
-    // 2. Ambil seluruh rute di hari yang sama, urutkan berdasarkan sortOrder lalu waktu pembuatan
-    const siblingDestinations = await prisma.destination.findMany({
-      where: { packageId: currentDest.packageId, day: currentDest.day },
+    // 2. Ambil SEMUA rute di Paket dan HARI yang sama (Diurutkan berdasarkan sortOrder, lalu waktu buat)
+    const siblings = await prisma.destination.findMany({
+      where: { 
+        packageId: currentDest.packageId,
+        day: currentDest.day 
+      },
       orderBy: [
         { sortOrder: "asc" },
-        { createdAt: "asc" }
+        { createdAt: "asc" } // Ini penyelamat jika semua sortOrder bernilai 0
       ],
     });
 
-    const currentIndex = siblingDestinations.findIndex((d) => d.id === id);
+    // 3. Cari posisi rute saat ini di dalam antrean
+    const currentIndex = siblings.findIndex((dest) => dest.id === id);
+    if (currentIndex === -1) return NextResponse.json({ error: "Gagal menemukan indeks" }, { status: 400 });
+
+    // 4. Tentukan posisi tujuan (Geser atas atau bawah)
     const targetIndex = direction === "up" ? currentIndex - 1 : currentIndex + 1;
 
-    // Cegah pergeseran jika sudah melampaui batas atas atau bawah rute
-    if (targetIndex < 0 || targetIndex >= siblingDestinations.length) {
-      return NextResponse.json({ success: true, message: "Sudah berada di batas maksimal" });
+    // Jika sudah mentok di paling atas atau paling bawah, abaikan
+    if (targetIndex < 0 || targetIndex >= siblings.length) {
+      return NextResponse.json({ success: true, message: "Sudah di batas ujung" });
     }
 
-    // 3. Bangun transaksi massal untuk memperbarui nomor urut berdasarkan urutan indeks baru
-    const updates = siblingDestinations.map((dest, index) => {
-      let newOrder = index;
-      
-      // Tukar indeks posisi jika item berada di area pergeseran
-      if (index === currentIndex) newOrder = targetIndex;
-      if (index === targetIndex) newOrder = currentIndex;
+    // 5. Eksekusi Penukaran Posisi (Gunakan Transaksi Database agar aman)
+    const currentId = siblings[currentIndex].id;
+    const targetId = siblings[targetIndex].id;
 
+    await prisma.$transaction([
+      prisma.destination.update({
+        where: { id: currentId },
+        data: { sortOrder: targetIndex }, // Beri nomor urut baru
+      }),
+      prisma.destination.update({
+        where: { id: targetId },
+        data: { sortOrder: currentIndex }, // Beri nomor urut baru
+      })
+    ]);
+
+    // 6. Rapikan sisa urutan data lainnya agar tidak ada angka ganda (Self-Healing System)
+    const cleanupUpdates = siblings.map((dest, index) => {
+      if (dest.id === currentId || dest.id === targetId) return null; // Lewati yang baru saja ditukar
       return prisma.destination.update({
         where: { id: dest.id },
-        data: { sortOrder: newOrder },
+        data: { sortOrder: index }
       });
-    });
+    }).filter(Boolean); // Buang nilai null
 
-    // Jalankan pembaruan data secara serempak di PostgreSQL
-    await prisma.$transaction(updates);
+    // @ts-ignore
+    if (cleanupUpdates.length > 0) await prisma.$transaction(cleanupUpdates);
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error("Kesalahan Sistem Reorder:", error);
-    return NextResponse.json({ error: "Gagal memproses perubahan posisi jalur linimasa" }, { status: 500 });
+    console.error("Gagal Reorder:", error);
+    return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
   }
 }

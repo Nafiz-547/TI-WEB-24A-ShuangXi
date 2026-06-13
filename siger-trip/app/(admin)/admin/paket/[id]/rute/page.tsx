@@ -4,7 +4,11 @@ import Link from "next/link";
 import Image from "next/image";
 import RuteForm from "./RuteForm";
 import DeleteRuteButton from "./DeleteRuteButton";
-import ReorderButtons from "./ReorderButtons"; // ➕ 1. Impor komponen tombol geser
+import ReorderButtons from "./ReorderButtons";
+
+// 🔴 TAHAP 3: PERINTAH SAKTI UNTUK MEMATIKAN CACHE
+// Ini memaksa Next.js selalu mengambil data terbaru dari database setiap kali halaman dimuat ulang oleh router.refresh()
+export const dynamic = "force-dynamic";
 
 type Params = Promise<{ id: string }>;
 type SearchParams = Promise<{ edit?: string }>;
@@ -24,6 +28,7 @@ export default async function AdminManagementRutePage({
     where: { id },
     include: {
       destinations: {
+        // TAHAP 3: Pastikan urutan prioritasnya adalah Hari > Urutan Posisi > Waktu Pembuatan
         orderBy: [{ day: "asc" }, { sortOrder: "asc" }, { createdAt: "asc" }],
       },
     },
@@ -111,7 +116,7 @@ export default async function AdminManagementRutePage({
 
                     {/* TOMBOL AKSI RUTE */}
                     <div className="flex items-center gap-1 self-center bg-slate-50 border border-slate-200/80 p-1 rounded-xl shadow-sm">
-                      {/* ➕ 2. Sisipkan komponen tombol geser di sini secara aman */}
+                      {/* KOMPONEN TOMBOL GESER (Pastikan sudah sesuai dengan Tahap 2) */}
                       <ReorderButtons id={dest.id} />
 
                       <span className="text-slate-200 text-xs px-0.5">|</span>
@@ -137,7 +142,6 @@ export default async function AdminManagementRutePage({
           <h3 className="text-sm font-bold uppercase tracking-wider text-slate-700 mb-4">
             {editData ? "✏️ Edit Titik Rute" : "➕ Tambah Titik Rute"}
           </h3>
-          {/* Trik Reset State React menggunakan atribut 'key' */}
           <RuteForm
             key={editData ? editData.id : "tambah-mode"}
             packageId={travelPackage.id}
@@ -151,7 +155,7 @@ export default async function AdminManagementRutePage({
                     day: editData.day,
                     location: editData.location,
                     description: editData.description,
-                    image: editData.image || "/images/placeholder.jpg", // Mengubah null menjadi string placeholder aman
+                    image: editData.image || "/images/placeholder.jpg",
                     price: editData.price,
                   }
                 : null

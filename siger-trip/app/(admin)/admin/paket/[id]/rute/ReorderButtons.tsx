@@ -7,43 +7,46 @@ export default function ReorderButtons({ id }: { id: string }) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
 
-  const handleReorder = async (direction: "up" | "down") => {
+  const handleMove = async (direction: "up" | "down") => {
+    if (loading) return;
     setLoading(true);
+
     try {
       const res = await fetch("/api/destinasi/reorder", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id, direction }),
       });
-      
+
       if (res.ok) {
-        // Menyegarkan data halaman secara halus tanpa reload total browser
-        router.refresh();
+        // PERINTAH SAKTI: Paksa Next.js mengambil data segar dari database
+        router.refresh(); 
+      } else {
+        console.error("Gagal menggeser posisi");
       }
-    } catch (err) {
-      console.error("Gagal mengubah urutan:", err);
+    } catch (error) {
+      console.error("Error:", error);
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="flex items-center gap-0.5">
+    <div className="flex flex-col items-center justify-center bg-slate-100 rounded-md overflow-hidden border border-slate-200 shadow-sm mr-2">
       <button
-        type="button"
+        onClick={() => handleMove("up")}
         disabled={loading}
-        onClick={() => handleReorder("up")}
-        className="p-1 text-[10px] text-slate-400 hover:text-slate-800 hover:bg-slate-100 rounded transition-colors disabled:opacity-40"
-        title="Naikkan Urutan"
+        className="px-2 py-0.5 text-[9px] text-slate-500 hover:text-slate-900 hover:bg-slate-200 transition-colors disabled:opacity-30"
+        title="Geser ke Atas"
       >
         ▲
       </button>
+      <div className="h-px w-full bg-slate-200"></div>
       <button
-        type="button"
+        onClick={() => handleMove("down")}
         disabled={loading}
-        onClick={() => handleReorder("down")}
-        className="p-1 text-[10px] text-slate-400 hover:text-slate-800 hover:bg-slate-100 rounded transition-colors disabled:opacity-40"
-        title="Turunkan Urutan"
+        className="px-2 py-0.5 text-[9px] text-slate-500 hover:text-slate-900 hover:bg-slate-200 transition-colors disabled:opacity-30"
+        title="Geser ke Bawah"
       >
         ▼
       </button>

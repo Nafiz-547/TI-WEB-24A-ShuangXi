@@ -2,6 +2,7 @@ import { prisma } from "@/lib/prisma";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+export const dynamic = "force-dynamic";
 
 type Params = Promise<{ id: string }>;
 type SearchParams = Promise<{ day?: string }>;
