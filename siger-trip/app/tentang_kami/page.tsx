@@ -165,7 +165,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-      <section className="mx-auto max-w-6xl px-6 py-20 sm:px-10 lg:px-16 bg-gradient-to-br from-amber-50 via-white to-slate-50 rounded-[2rem] shadow-lg shadow-slate-200/40 mb-12">
+      <section className="mx-auto max-w-6xl px-6 py-20 sm:px-10 lg:px-16 bg-linear-to-br from-amber-50 via-white to-slate-50 rounded-4xl shadow-lg shadow-slate-200/40 mb-12">
         <div className="text-center mb-12">
           <p className="text-sm uppercase tracking-[0.28em] text-amber-500">7-Day Summary</p>
           <h2 className="mt-4 text-4xl font-semibold text-slate-900">Ringkasan Perjalanan Lampung</h2>
@@ -185,7 +185,7 @@ export default function AboutPage() {
               { day: 7, title: "Santai & Pulang", desc: "Waktu santai, belanja oleh-oleh, dan perjalanan pulang dengan kenangan penuh." },
             ].map((item, index) => (
               <article key={item.day} className="relative rounded-[1.75rem] border border-slate-200/80 bg-white/90 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
-                <div className={`absolute left-0 top-8 hidden h-2 w-8 rounded-full bg-amber-200 lg:block ${index % 2 === 0 ? "translate-x-[-50%]" : "translate-x-[calc(50%+100%)]"}`} />
+                <div className={`absolute left-0 top-8 hidden h-2 w-8 rounded-full bg-amber-200 lg:block ${index % 2 === 0 ? "translate-x-[-50%]" : "translate-x-[150%]"}`} />
                 <div className="flex items-center justify-between gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-3xl bg-amber-100 text-amber-700 font-semibold text-lg shadow-sm">{item.day}</div>
                   <span className="rounded-full bg-amber-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-amber-700">Day {item.day}</span>
@@ -226,7 +226,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-20 sm:px-10 lg:px-16 bg-gradient-to-r from-amber-50 to-orange-50 rounded-3xl">
+      <section className="mx-auto max-w-6xl px-6 py-20 sm:px-10 lg:px-16 bg-linear-to-r from-amber-50 to-orange-50 rounded-3xl">
         <div className="text-center mb-12">
           <p className="text-sm uppercase tracking-[0.28em] text-amber-600">Layanan Kami</p>
           <h2 className="mt-4 text-4xl font-semibold text-slate-900">Detail Jasa Travel</h2>
